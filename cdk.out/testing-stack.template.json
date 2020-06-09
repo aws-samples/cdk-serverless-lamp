@@ -1,0 +1,577 @@
+{
+  "Resources": {
+    "testingvendorLayerADAC47B0": {
+      "Type": "AWS::Lambda::LayerVersion",
+      "Properties": {
+        "Content": {
+          "S3Bucket": {
+            "Ref": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3BucketFBA3D515"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3VersionKeyD833418B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3VersionKeyD833418B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/vendorLayer/Resource",
+        "aws:asset:path": "asset.8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9",
+        "aws:asset:property": "Content"
+      }
+    },
+    "testinghandlerServiceRole2570D6AA": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/handler/ServiceRole/Resource"
+      }
+    },
+    "testinghandlerB9F07DDF": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3Bucket9DCEF0F0"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3VersionKey78B0E11B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3VersionKey78B0E11B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "index.php",
+        "Role": {
+          "Fn::GetAtt": [
+            "testinghandlerServiceRole2570D6AA",
+            "Arn"
+          ]
+        },
+        "Runtime": "provided",
+        "Environment": {
+          "Variables": {
+            "BREF_AUTOLOAD_PATH": "/opt/vendor/autoload.php"
+          }
+        },
+        "Layers": [
+          "arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:10",
+          {
+            "Ref": "testingvendorLayerADAC47B0"
+          }
+        ]
+      },
+      "DependsOn": [
+        "testinghandlerServiceRole2570D6AA"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/handler/Resource",
+        "aws:asset:path": "asset.1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9",
+        "aws:asset:property": "Code"
+      }
+    },
+    "testingapiservice63C921E5": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Name": "apiservice"
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Resource"
+      }
+    },
+    "testingapiserviceCloudWatchRole9A8EFD56": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "apigateway.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/CloudWatchRole/Resource"
+      }
+    },
+    "testingapiserviceAccount7068787B": {
+      "Type": "AWS::ApiGateway::Account",
+      "Properties": {
+        "CloudWatchRoleArn": {
+          "Fn::GetAtt": [
+            "testingapiserviceCloudWatchRole9A8EFD56",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "testingapiservice63C921E5"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Account"
+      }
+    },
+    "testingapiserviceDeploymentB25535FD4655b3762c5b23ce545f4906bb058b09": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testingapiservice63C921E5"
+        },
+        "Description": "Automatically created by the RestApi construct"
+      },
+      "DependsOn": [
+        "testingapiserviceproxyANYCFB581A0",
+        "testingapiserviceproxy77CA97E4",
+        "testingapiserviceANYCBF69A86"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Deployment/Resource"
+      }
+    },
+    "testingapiserviceDeploymentStageprodB6AF451C": {
+      "Type": "AWS::ApiGateway::Stage",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testingapiservice63C921E5"
+        },
+        "DeploymentId": {
+          "Ref": "testingapiserviceDeploymentB25535FD4655b3762c5b23ce545f4906bb058b09"
+        },
+        "StageName": "prod"
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/DeploymentStage.prod/Resource"
+      }
+    },
+    "testingapiserviceproxy77CA97E4": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "testingapiservice63C921E5",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "{proxy+}",
+        "RestApiId": {
+          "Ref": "testingapiservice63C921E5"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Default/{proxy+}/Resource"
+      }
+    },
+    "testingapiserviceproxyANYApiPermissiontestingstacktestingapiserviceCC0E5A73ANYproxyA62AA64E": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "testinghandlerB9F07DDF",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "testingapiservice63C921E5"
+              },
+              "/",
+              {
+                "Ref": "testingapiserviceDeploymentStageprodB6AF451C"
+              },
+              "/*/{proxy+}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Default/{proxy+}/ANY/ApiPermission.testingstacktestingapiserviceCC0E5A73.ANY..{proxy+}"
+      }
+    },
+    "testingapiserviceproxyANYApiPermissionTesttestingstacktestingapiserviceCC0E5A73ANYproxy80C5943F": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "testinghandlerB9F07DDF",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "testingapiservice63C921E5"
+              },
+              "/test-invoke-stage/*/{proxy+}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Default/{proxy+}/ANY/ApiPermission.Test.testingstacktestingapiserviceCC0E5A73.ANY..{proxy+}"
+      }
+    },
+    "testingapiserviceproxyANYCFB581A0": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "ANY",
+        "ResourceId": {
+          "Ref": "testingapiserviceproxy77CA97E4"
+        },
+        "RestApiId": {
+          "Ref": "testingapiservice63C921E5"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "testinghandlerB9F07DDF",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Default/{proxy+}/ANY/Resource"
+      }
+    },
+    "testingapiserviceANYApiPermissiontestingstacktestingapiserviceCC0E5A73ANYED61510E": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "testinghandlerB9F07DDF",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "testingapiservice63C921E5"
+              },
+              "/",
+              {
+                "Ref": "testingapiserviceDeploymentStageprodB6AF451C"
+              },
+              "/*/"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Default/ANY/ApiPermission.testingstacktestingapiserviceCC0E5A73.ANY.."
+      }
+    },
+    "testingapiserviceANYApiPermissionTesttestingstacktestingapiserviceCC0E5A73ANYFB283463": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "testinghandlerB9F07DDF",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "testingapiservice63C921E5"
+              },
+              "/test-invoke-stage/*/"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Default/ANY/ApiPermission.Test.testingstacktestingapiserviceCC0E5A73.ANY.."
+      }
+    },
+    "testingapiserviceANYCBF69A86": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "ANY",
+        "ResourceId": {
+          "Fn::GetAtt": [
+            "testingapiservice63C921E5",
+            "RootResourceId"
+          ]
+        },
+        "RestApiId": {
+          "Ref": "testingapiservice63C921E5"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "testinghandlerB9F07DDF",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "testing-stack/testing/apiservice/Default/ANY/Resource"
+      }
+    }
+  },
+  "Outputs": {
+    "testingapiserviceEndpointEB671573": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "testingapiservice63C921E5"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            },
+            "/",
+            {
+              "Ref": "testingapiserviceDeploymentStageprodB6AF451C"
+            },
+            "/"
+          ]
+        ]
+      }
+    }
+  },
+  "Parameters": {
+    "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3BucketFBA3D515": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9\""
+    },
+    "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3VersionKeyD833418B": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9\""
+    },
+    "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9ArtifactHash38CD1250": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9\""
+    },
+    "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3Bucket9DCEF0F0": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9\""
+    },
+    "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3VersionKey78B0E11B": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9\""
+    },
+    "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9ArtifactHash6048F8E1": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9\""
+    }
+  }
+}
