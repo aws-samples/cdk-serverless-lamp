@@ -1,3 +1,8 @@
+
+[![NPM version](https://badge.fury.io/js/cdk-serverless-lamp.svg)](https://badge.fury.io/js/eks-spot-blocks)
+[![PyPI version](https://badge.fury.io/py/cdk-serverless-lamp.svg)](https://badge.fury.io/py/eks-spot-blocks)
+![Release](https://github.com/pahud/cdk-serverless-lamp/workflows/Release/badge.svg)
+
 # Welcome to `cdk-serverless-lamp`
 
 A JSII construct library for AWS CDK to build the [New Serverless LAMP Stack](https://aws.amazon.com/tw/blogs/compute/introducing-the-new-serverless-lamp-stack/)
