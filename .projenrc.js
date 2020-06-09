@@ -4,14 +4,14 @@ const {
 } = require('projen');
 
 const AWS_CDK_LATEST_RELEASE = '1.44.0';
-const PROJECT_NAME = 'cdk-serverless-api';
-const PROJECT_DESCRIPTION = 'A sample JSII construct lib for AWS CDK';
+const PROJECT_NAME = 'cdk-serverless-lamp';
+const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
 
 const project = new JsiiProject({
   name: PROJECT_NAME,
   jsiiVersion: Semver.caret('1.5.0'),
   description: PROJECT_DESCRIPTION,
-  repository: 'https://github.com/pahud/awscdk-jsii-template.git',
+  repository: 'https://github.com/pahud/cdk-serverless-lamp.git',
   authorName: 'Pahud Hsieh',
   authorEmail: 'hunhsieh@amazon.com',
   stability: 'experimental',
@@ -25,18 +25,22 @@ const project = new JsiiProject({
   peerDependencies: {
     constructs: Semver.caret('3.0.3'),
     '@aws-cdk/core': Semver.caret(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-apigateway': Semver.caret(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-apigatewayv2': Semver.caret(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-lambda': Semver.caret(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-rds': Semver.caret(AWS_CDK_LATEST_RELEASE),
   },
   dependencies: {
     constructs: Semver.caret('3.0.3'),
     '@aws-cdk/core': Semver.caret(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-apigateway': Semver.caret(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-apigatewayv2': Semver.caret(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-lambda': Semver.caret(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-rds': Semver.caret(AWS_CDK_LATEST_RELEASE),
   },
   python: {
-    distName: 'cdk-serverless-api',
-    module: 'cdk_serverless_api'
+    distName: 'cdk-serverless-lamp',
+    module: 'cdk_serverless_lamp'
   }
 });
 
@@ -44,7 +48,16 @@ project.addFields({
   'keywords': [
     'cdk',
     'aws',
+    'serverless',
+    'lamp',
   ]
+});
+
+project.addFields({
+  'awscdkio': {
+    'twitter': '@pahudnet',
+    'announce': true,
+  }
 });
 
 project.synth();
