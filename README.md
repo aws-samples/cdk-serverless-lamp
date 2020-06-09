@@ -1,6 +1,6 @@
 
-[![NPM version](https://badge.fury.io/js/cdk-serverless-lamp.svg)](https://badge.fury.io/js/eks-spot-blocks)
-[![PyPI version](https://badge.fury.io/py/cdk-serverless-lamp.svg)](https://badge.fury.io/py/eks-spot-blocks)
+[![NPM version](https://badge.fury.io/js/cdk-serverless-lamp.svg)](https://badge.fury.io/js/cdk-serverless-lamp)
+[![PyPI version](https://badge.fury.io/py/cdk-serverless-lamp.svg)](https://badge.fury.io/py/cdk-serverless-lamp)
 ![Release](https://github.com/pahud/cdk-serverless-lamp/workflows/Release/badge.svg)
 
 # Welcome to `cdk-serverless-lamp`
