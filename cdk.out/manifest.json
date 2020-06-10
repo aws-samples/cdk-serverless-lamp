@@ -1,5 +1,5 @@
 {
-  "version": "4.0.0",
+  "version": "5.0.0",
   "artifacts": {
     "Tree": {
       "type": "cdk:tree",
@@ -18,71 +18,24 @@
           {
             "type": "aws:cdk:asset",
             "data": {
-              "path": "asset.8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9",
-              "id": "8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9",
+              "path": "asset.ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606",
+              "id": "ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606",
               "packaging": "zip",
-              "sourceHash": "8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9",
-              "s3BucketParameter": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3BucketFBA3D515",
-              "s3KeyParameter": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3VersionKeyD833418B",
-              "artifactHashParameter": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9ArtifactHash38CD1250"
+              "sourceHash": "ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606",
+              "s3BucketParameter": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3BucketC917A360",
+              "s3KeyParameter": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3VersionKey6843C10F",
+              "artifactHashParameter": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606ArtifactHashBB4AA005"
             },
             "trace": [
-              "ConstructNode.addMetadata (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/construct-compat.js:306:62)",
+              "ConstructNode.addMetadata (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/construct-compat.js:305:62)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:129:29)",
               "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:57:25)",
-              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:348:33)",
+              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:352:33)",
               "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:61:31)",
-              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:30:44)",
-              "AssetCode.bind (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/code.js:136:26)",
-              "new LayerVersion (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/layers.js:37:33)",
-              "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:15:29)",
-              "Object.<anonymous> (/Users/pahud/github/cdk-serverless-lamp/test/integ.api.js:7:1)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "internal/main/run_main_module.js:17:47"
-            ]
-          },
-          {
-            "type": "aws:cdk:asset",
-            "data": {
-              "path": "asset.1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9",
-              "id": "1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9",
-              "packaging": "zip",
-              "sourceHash": "1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9",
-              "s3BucketParameter": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3Bucket9DCEF0F0",
-              "s3KeyParameter": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3VersionKey78B0E11B",
-              "artifactHashParameter": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9ArtifactHash6048F8E1"
-            },
-            "trace": [
-              "ConstructNode.addMetadata (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/construct-compat.js:306:62)",
-              "LegacyStackSynthesizer.doAddFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:129:29)",
-              "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:57:25)",
-              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:348:33)",
-              "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:61:31)",
-              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:30:44)",
+              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:34:44)",
               "AssetCode.bind (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/code.js:136:26)",
               "new Function (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/function.js:69:33)",
               "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:18:124)",
-              "Object.<anonymous> (/Users/pahud/github/cdk-serverless-lamp/test/integ.api.js:7:1)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "internal/main/run_main_module.js:17:47"
-            ]
-          }
-        ],
-        "/testing-stack/testing/vendorLayer/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "testingvendorLayerADAC47B0",
-            "trace": [
-              "new LayerVersion (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/layers.js:44:26)",
-              "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:15:29)",
               "Object.<anonymous> (/Users/pahud/github/cdk-serverless-lamp/test/integ.api.js:7:1)",
               "Module._compile (internal/modules/cjs/loader.js:1147:30)",
               "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
@@ -412,89 +365,17 @@
             ]
           }
         ],
-        "/testing-stack/AssetParameters/8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9/S3Bucket": [
+        "/testing-stack/AssetParameters/ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606/S3Bucket": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3BucketFBA3D515",
+            "data": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3BucketC917A360",
             "trace": [
               "new FileAssetParameters (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:11:36)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:119:22)",
               "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:57:25)",
-              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:348:33)",
+              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:352:33)",
               "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:61:31)",
-              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:30:44)",
-              "AssetCode.bind (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/code.js:136:26)",
-              "new LayerVersion (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/layers.js:37:33)",
-              "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:15:29)",
-              "Object.<anonymous> (/Users/pahud/github/cdk-serverless-lamp/test/integ.api.js:7:1)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "internal/main/run_main_module.js:17:47"
-            ]
-          }
-        ],
-        "/testing-stack/AssetParameters/8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9/S3VersionKey": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3VersionKeyD833418B",
-            "trace": [
-              "new FileAssetParameters (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:15:35)",
-              "LegacyStackSynthesizer.doAddFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:119:22)",
-              "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:57:25)",
-              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:348:33)",
-              "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:61:31)",
-              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:30:44)",
-              "AssetCode.bind (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/code.js:136:26)",
-              "new LayerVersion (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/layers.js:37:33)",
-              "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:15:29)",
-              "Object.<anonymous> (/Users/pahud/github/cdk-serverless-lamp/test/integ.api.js:7:1)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "internal/main/run_main_module.js:17:47"
-            ]
-          }
-        ],
-        "/testing-stack/AssetParameters/8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9/ArtifactHash": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9ArtifactHash38CD1250",
-            "trace": [
-              "new FileAssetParameters (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:19:38)",
-              "LegacyStackSynthesizer.doAddFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:119:22)",
-              "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:57:25)",
-              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:348:33)",
-              "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:61:31)",
-              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:30:44)",
-              "AssetCode.bind (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/code.js:136:26)",
-              "new LayerVersion (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/layers.js:37:33)",
-              "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:15:29)",
-              "Object.<anonymous> (/Users/pahud/github/cdk-serverless-lamp/test/integ.api.js:7:1)",
-              "Module._compile (internal/modules/cjs/loader.js:1147:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1167:10)",
-              "Module.load (internal/modules/cjs/loader.js:996:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:896:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
-              "internal/main/run_main_module.js:17:47"
-            ]
-          }
-        ],
-        "/testing-stack/AssetParameters/1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9/S3Bucket": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3Bucket9DCEF0F0",
-            "trace": [
-              "new FileAssetParameters (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:11:36)",
-              "LegacyStackSynthesizer.doAddFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:119:22)",
-              "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:57:25)",
-              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:348:33)",
-              "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:61:31)",
-              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:30:44)",
+              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:34:44)",
               "AssetCode.bind (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/code.js:136:26)",
               "new Function (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/function.js:69:33)",
               "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:18:124)",
@@ -508,17 +389,17 @@
             ]
           }
         ],
-        "/testing-stack/AssetParameters/1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9/S3VersionKey": [
+        "/testing-stack/AssetParameters/ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606/S3VersionKey": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3VersionKey78B0E11B",
+            "data": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3VersionKey6843C10F",
             "trace": [
               "new FileAssetParameters (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:15:35)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:119:22)",
               "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:57:25)",
-              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:348:33)",
+              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:352:33)",
               "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:61:31)",
-              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:30:44)",
+              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:34:44)",
               "AssetCode.bind (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/code.js:136:26)",
               "new Function (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/function.js:69:33)",
               "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:18:124)",
@@ -532,17 +413,17 @@
             ]
           }
         ],
-        "/testing-stack/AssetParameters/1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9/ArtifactHash": [
+        "/testing-stack/AssetParameters/ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606/ArtifactHash": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9ArtifactHash6048F8E1",
+            "data": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606ArtifactHashBB4AA005",
             "trace": [
               "new FileAssetParameters (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/private/asset-parameters.js:19:38)",
               "LegacyStackSynthesizer.doAddFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:119:22)",
               "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:57:25)",
-              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:348:33)",
+              "Stack.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack.js:352:33)",
               "LegacyStackSynthesizer.addFileAsset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:61:31)",
-              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:30:44)",
+              "new Asset (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-s3-assets/lib/asset.js:34:44)",
               "AssetCode.bind (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/code.js:136:26)",
               "new Function (/Users/pahud/github/cdk-serverless-lamp/node_modules/@aws-cdk/aws-lambda/lib/function.js:69:33)",
               "new ServerlessApi (/Users/pahud/github/cdk-serverless-lamp/lib/index.js:18:124)",
@@ -561,24 +442,24 @@
   },
   "runtime": {
     "libraries": {
-      "@aws-cdk/core": "1.44.0",
-      "@aws-cdk/cx-api": "1.44.0",
-      "@aws-cdk/cloud-assembly-schema": "1.44.0",
-      "@aws-cdk/cdk-assets-schema": "1.44.0",
-      "@aws-cdk/aws-apigateway": "1.44.0",
-      "@aws-cdk/aws-iam": "1.44.0",
-      "@aws-cdk/region-info": "1.44.0",
-      "@aws-cdk/aws-s3-assets": "1.44.0",
-      "@aws-cdk/assets": "1.44.0",
-      "@aws-cdk/aws-s3": "1.44.0",
-      "@aws-cdk/aws-events": "1.44.0",
-      "@aws-cdk/aws-kms": "1.44.0",
-      "@aws-cdk/aws-lambda": "1.44.0",
-      "@aws-cdk/aws-cloudwatch": "1.44.0",
-      "@aws-cdk/aws-ec2": "1.44.0",
-      "@aws-cdk/aws-ssm": "1.44.0",
-      "@aws-cdk/aws-logs": "1.44.0",
-      "@aws-cdk/aws-sqs": "1.44.0",
+      "@aws-cdk/core": "1.45.0",
+      "@aws-cdk/cx-api": "1.45.0",
+      "@aws-cdk/cloud-assembly-schema": "1.45.0",
+      "@aws-cdk/cdk-assets-schema": "1.45.0",
+      "@aws-cdk/aws-apigateway": "1.45.0",
+      "@aws-cdk/aws-iam": "1.45.0",
+      "@aws-cdk/region-info": "1.45.0",
+      "@aws-cdk/aws-s3-assets": "1.45.0",
+      "@aws-cdk/aws-s3": "1.45.0",
+      "@aws-cdk/aws-events": "1.45.0",
+      "@aws-cdk/aws-kms": "1.45.0",
+      "@aws-cdk/assets": "1.45.0",
+      "@aws-cdk/aws-lambda": "1.45.0",
+      "@aws-cdk/aws-cloudwatch": "1.45.0",
+      "@aws-cdk/aws-ec2": "1.45.0",
+      "@aws-cdk/aws-ssm": "1.45.0",
+      "@aws-cdk/aws-logs": "1.45.0",
+      "@aws-cdk/aws-sqs": "1.45.0",
       "jsii-runtime": "node.js/v13.10.1"
     }
   }

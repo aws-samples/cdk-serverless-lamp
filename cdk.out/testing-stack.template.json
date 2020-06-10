@@ -1,53 +1,5 @@
 {
   "Resources": {
-    "testingvendorLayerADAC47B0": {
-      "Type": "AWS::Lambda::LayerVersion",
-      "Properties": {
-        "Content": {
-          "S3Bucket": {
-            "Ref": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3BucketFBA3D515"
-          },
-          "S3Key": {
-            "Fn::Join": [
-              "",
-              [
-                {
-                  "Fn::Select": [
-                    0,
-                    {
-                      "Fn::Split": [
-                        "||",
-                        {
-                          "Ref": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3VersionKeyD833418B"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "Fn::Select": [
-                    1,
-                    {
-                      "Fn::Split": [
-                        "||",
-                        {
-                          "Ref": "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3VersionKeyD833418B"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            ]
-          }
-        }
-      },
-      "Metadata": {
-        "aws:cdk:path": "testing-stack/testing/vendorLayer/Resource",
-        "aws:asset:path": "asset.8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9",
-        "aws:asset:property": "Content"
-      }
-    },
     "testinghandlerServiceRole2570D6AA": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -87,7 +39,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": {
-            "Ref": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3Bucket9DCEF0F0"
+            "Ref": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3BucketC917A360"
           },
           "S3Key": {
             "Fn::Join": [
@@ -100,7 +52,7 @@
                       "Fn::Split": [
                         "||",
                         {
-                          "Ref": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3VersionKey78B0E11B"
+                          "Ref": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3VersionKey6843C10F"
                         }
                       ]
                     }
@@ -113,7 +65,7 @@
                       "Fn::Split": [
                         "||",
                         {
-                          "Ref": "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3VersionKey78B0E11B"
+                          "Ref": "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3VersionKey6843C10F"
                         }
                       ]
                     }
@@ -123,7 +75,7 @@
             ]
           }
         },
-        "Handler": "index.php",
+        "Handler": "public/index.php",
         "Role": {
           "Fn::GetAtt": [
             "testinghandlerServiceRole2570D6AA",
@@ -133,22 +85,20 @@
         "Runtime": "provided",
         "Environment": {
           "Variables": {
-            "BREF_AUTOLOAD_PATH": "/opt/vendor/autoload.php"
+            "APP_STORAGE": "/tmp"
           }
         },
         "Layers": [
-          "arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:10",
-          {
-            "Ref": "testingvendorLayerADAC47B0"
-          }
-        ]
+          "arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:10"
+        ],
+        "Timeout": 120
       },
       "DependsOn": [
         "testinghandlerServiceRole2570D6AA"
       ],
       "Metadata": {
         "aws:cdk:path": "testing-stack/testing/handler/Resource",
-        "aws:asset:path": "asset.1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9",
+        "aws:asset:path": "asset.ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606",
         "aws:asset:property": "Code"
       }
     },
@@ -297,7 +247,7 @@
               {
                 "Ref": "testingapiserviceDeploymentStageprodB6AF451C"
               },
-              "/*/{proxy+}"
+              "/*/*"
             ]
           ]
         }
@@ -337,7 +287,7 @@
               {
                 "Ref": "testingapiservice63C921E5"
               },
-              "/test-invoke-stage/*/{proxy+}"
+              "/test-invoke-stage/*/*"
             ]
           ]
         }
@@ -549,29 +499,17 @@
     }
   },
   "Parameters": {
-    "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3BucketFBA3D515": {
+    "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3BucketC917A360": {
       "Type": "String",
-      "Description": "S3 bucket for asset \"8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9\""
+      "Description": "S3 bucket for asset \"ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606\""
     },
-    "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9S3VersionKeyD833418B": {
+    "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606S3VersionKey6843C10F": {
       "Type": "String",
-      "Description": "S3 key for asset version \"8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9\""
+      "Description": "S3 key for asset version \"ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606\""
     },
-    "AssetParameters8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9ArtifactHash38CD1250": {
+    "AssetParametersab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606ArtifactHashBB4AA005": {
       "Type": "String",
-      "Description": "Artifact hash for asset \"8061e47c391b56b07e6e738ec1e2263e0949c515542c0307ea13a5de1fefc9d9\""
-    },
-    "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3Bucket9DCEF0F0": {
-      "Type": "String",
-      "Description": "S3 bucket for asset \"1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9\""
-    },
-    "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9S3VersionKey78B0E11B": {
-      "Type": "String",
-      "Description": "S3 key for asset version \"1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9\""
-    },
-    "AssetParameters1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9ArtifactHash6048F8E1": {
-      "Type": "String",
-      "Description": "Artifact hash for asset \"1795e82e03f6627e35da86dadb349d13e8c36b4932b8d2879c9506abfe8d41d9\""
+      "Description": "Artifact hash for asset \"ab1839d96e5c8a7b787b8bb1c9d65bc52d8faae2e3de0663c0775da712144606\""
     }
   }
 }
