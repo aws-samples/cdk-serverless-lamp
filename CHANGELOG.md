@@ -7,6 +7,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **serverless-api:** support laravel framework with brefi ([0adf2b8](https://github.com/pahud/cdk-serverless-lamp/commit/0adf2b8ab4a2e09ca239270bd271138c23a85b08))
+* **serverless-api:** support laravel framework with bref ([0adf2b8](https://github.com/pahud/cdk-serverless-lamp/commit/0adf2b8ab4a2e09ca239270bd271138c23a85b08))
 
 ### 0.0.1 (2020-06-09)
