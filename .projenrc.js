@@ -60,4 +60,6 @@ project.addFields({
   }
 });
 
+project.npmignore.exclude('cdk.out', 'composer', 'images', 'yarn-error.log');
+
 project.synth();
