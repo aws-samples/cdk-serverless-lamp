@@ -46,10 +46,10 @@ jobs:
         with:
           name: dist
       - name: Release
-        run: npx -p jsii-release jsii-release-npm
+        run: npx -p pahud-jsii-release jsii-release-npm
         env:
-          NPM_TOKEN: ${{ secrets.AWS_CODEARTIFACTS_TOKEN }} 
-          NPM_REGISTRY: ${{ secrets.AWS_CODEARTIFACTS_REGISTRY }} 
+          NPM_TOKEN: ${{ secrets.AWS_CODEARTIFACTS_TOKEN }}
+          NPM_REGISTRY: ${{ secrets.AWS_CODEARTIFACTS_REGISTRY }}
   release_pypi:
     name: Release to PyPi
     needs: build
