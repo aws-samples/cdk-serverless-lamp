@@ -46,7 +46,6 @@ const project = new JsiiProject({
 
 project.addFields({
   'keywords': [
-    'cdk',
     'aws',
     'serverless',
     'lamp',
@@ -56,7 +55,7 @@ project.addFields({
 project.addFields({
   'awscdkio': {
     'twitter': '@pahudnet',
-    'announce': true,
+    'announce': false,
   }
 });
 
