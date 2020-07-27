@@ -4,22 +4,22 @@
 
 Name|Description
 ----|-----------
-[ServerlessApi](#cdk-serverless-lamp-serverlessapi)|*No description*
-[ServerlessLaravel](#cdk-serverless-lamp-serverlesslaravel)|*No description*
+[ServerlessApi](#cdk-serverless-lamp-serverlessapi)|Use `ServerlessApi` to create the serverless API resource.
+[ServerlessLaravel](#cdk-serverless-lamp-serverlesslaravel)|Use `ServerlessLaravel` to create the serverless Laravel resource.
 
 
 **Structs**
 
 Name|Description
 ----|-----------
-[ServerlessApiProps](#cdk-serverless-lamp-serverlessapiprops)|*No description*
-[ServerlessLaravelProps](#cdk-serverless-lamp-serverlesslaravelprops)|*No description*
+[ServerlessApiProps](#cdk-serverless-lamp-serverlessapiprops)|Construct properties for `ServerlessApi`.
+[ServerlessLaravelProps](#cdk-serverless-lamp-serverlesslaravelprops)|Construct properties for `ServerlessLaravel`.
 
 
 
 ## class ServerlessApi 🔹 <a id="cdk-serverless-lamp-serverlessapi"></a>
 
-
+Use `ServerlessApi` to create the serverless API resource.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
 __Extends__: [Construct](#aws-cdk-core-construct)
@@ -53,7 +53,7 @@ Name | Type | Description
 
 ## class ServerlessLaravel 🔹 <a id="cdk-serverless-lamp-serverlesslaravel"></a>
 
-
+Use `ServerlessLaravel` to create the serverless Laravel resource.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
 __Extends__: [ServerlessApi](#cdk-serverless-lamp-serverlessapi)
@@ -81,7 +81,7 @@ new ServerlessLaravel(scope: Construct, id: string, props: ServerlessLaravelProp
 ## struct ServerlessApiProps 🔹 <a id="cdk-serverless-lamp-serverlessapiprops"></a>
 
 
-
+Construct properties for `ServerlessApi`.
 
 
 
@@ -96,7 +96,7 @@ Name | Type | Description
 ## struct ServerlessLaravelProps 🔹 <a id="cdk-serverless-lamp-serverlesslaravelprops"></a>
 
 
-
+Construct properties for `ServerlessLaravel`.
 
 
 

@@ -4,6 +4,9 @@ import * as apigateway from '@aws-cdk/aws-apigatewayv2';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as path from 'path';
 
+/**
+ * Construct properties for `ServerlessApi`
+ */
 export interface ServerlessApiProps {
   /**
    * custom lambda function for the API
@@ -28,6 +31,9 @@ export interface ServerlessApiProps {
 
 }
 
+/**
+ * Use `ServerlessApi` to create the serverless API resource
+ */
 export class ServerlessApi extends cdk.Construct {
   readonly handler: lambda.IFunction
 
@@ -58,6 +64,10 @@ export class ServerlessApi extends cdk.Construct {
   }
 }
 
+
+/**
+ * Construct properties for `ServerlessLaravel`
+ */
 export interface ServerlessLaravelProps extends ServerlessApiProps {
   /**
    * path to your local laravel directory with bref
@@ -65,6 +75,9 @@ export interface ServerlessLaravelProps extends ServerlessApiProps {
   readonly laravelPath: string;
 }
 
+/**
+ * Use `ServerlessLaravel` to create the serverless Laravel resource
+ */
 export class ServerlessLaravel extends ServerlessApi {
   constructor(scope: cdk.Construct, id: string, props: ServerlessLaravelProps) {
     super(scope, id, {
