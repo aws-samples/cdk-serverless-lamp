@@ -14,7 +14,10 @@ A JSII construct library for AWS CDK to build the [New Serverless LAMP Stack](ht
 ```ts
 import { ServerlessApi } from 'cdk-serverless-lamp';
 
-new ServerlessApi(this, 'API');
+// create a serverless Laraval with custom `brefLayerVersion`
+new ServerlessApi(stack, 'testing', {
+  brefLayerVersion: 'arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:11',
+});
 ```
 
 On deploy complete, the API Gateway URL will be returned in the Output. Click the URL and you will see the Laravel landing page:
