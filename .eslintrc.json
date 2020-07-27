@@ -9,7 +9,7 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "2018",
+    "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "extends": [
@@ -33,11 +33,15 @@
     "*.js",
     "*.d.ts",
     "node_modules/",
-    "*.generated.ts"
+    "*.generated.ts",
+    "coverage"
   ],
   "rules": {
     "@typescript-eslint/no-require-imports": [
       "error"
+    ],
+    "indent": [
+      "off"
     ],
     "@typescript-eslint/indent": [
       "error",
@@ -53,6 +57,13 @@
     "comma-dangle": [
       "error",
       "always-multiline"
+    ],
+    "quote-props": [
+      "error",
+      "consistent-as-needed",
+      {
+        "unnecessary": true
+      }
     ],
     "import/no-extraneous-dependencies": [
       "error",
