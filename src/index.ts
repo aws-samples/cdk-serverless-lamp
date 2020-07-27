@@ -57,3 +57,20 @@ export class ServerlessApi extends cdk.Construct {
     new cdk.CfnOutput(this, 'EndpointURL', { value: endpoint.url! })
   }
 }
+
+export interface ServerlessLaravelProps extends ServerlessApiProps {
+  /**
+   * path to your local laravel directory with bref
+   */
+  readonly laravelPath: string;
+}
+
+export class ServerlessLaravel extends ServerlessApi {
+  constructor(scope: cdk.Construct, id: string, props: ServerlessLaravelProps) {
+    super(scope, id, {
+      lambdaCodePath: props.laravelPath,
+      brefLayerVersion: props.brefLayerVersion,
+      handler: props.handler,
+    });
+  }
+}

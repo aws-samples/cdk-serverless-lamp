@@ -15,22 +15,27 @@ By deploying this stack, it creates the following resources for you:
 
 ## Usage
 
-```ts
-import { ServerlessApi } from 'cdk-serverless-lamp';
+Building your serverless Laravel with `ServerlessLaravel` construct:
 
-// create a serverless Laraval with custom `brefLayerVersion`
-new ServerlessApi(stack, 'testing', {
+```ts
+import { ServerlessLaravel } from 'cdk-serverless-lamp';
+import { App, Stack } from '@aws-cdk/core';
+import * as path from 'path';
+
+const mockApp = new App();
+const stack = new Stack(mockApp, 'testing-stack');
+
+new ServerlessLaravel(stack, 'testing', {
+  // create a serverless Laraval with custom `brefLayerVersion`
   brefLayerVersion: 'arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:11',
   // specify your local laravel path
-  lambdaCodePath: path.join(__dirname, '../composer/laravel58-bref'),
+  laravelPath: path.join(__dirname, '../../composer/laravel58-bref'),
 });
 ```
 
 On deploy complete, the API Gateway URL will be returned in the Output. Click the URL and you will see the Laravel landing page:
 
 ![laravel-welcome](./images/laravel.png)
-
-
 
 
 ## Prepare the Laravel and bref
