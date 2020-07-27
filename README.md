@@ -21,6 +21,8 @@ import { ServerlessApi } from 'cdk-serverless-lamp';
 // create a serverless Laraval with custom `brefLayerVersion`
 new ServerlessApi(stack, 'testing', {
   brefLayerVersion: 'arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:11',
+  // specify your local laravel path
+  lambdaCodePath: path.join(__dirname, '../composer/laravel58-bref'),
 });
 ```
 
