@@ -22,8 +22,8 @@ import { ServerlessLaravel } from 'cdk-serverless-lamp';
 import { App, Stack } from '@aws-cdk/core';
 import * as path from 'path';
 
-const mockApp = new App();
-const stack = new Stack(mockApp, 'testing-stack');
+const app = new App();
+const stack = new Stack(app, 'ServerlessLaraval');
 
 new ServerlessLaravel(stack, 'testing', {
   // create a serverless Laraval with custom `brefLayerVersion`
