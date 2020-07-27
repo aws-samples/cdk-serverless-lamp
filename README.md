@@ -3,11 +3,15 @@
 [![PyPI version](https://badge.fury.io/py/cdk-serverless-lamp.svg)](https://badge.fury.io/py/cdk-serverless-lamp)
 ![Release](https://github.com/pahud/cdk-serverless-lamp/workflows/Release/badge.svg)
 
-# Welcome to `cdk-serverless-lamp`
+# Welcome to cdk-serverless-lamp
 
-A JSII construct library for AWS CDK to build the [New Serverless LAMP Stack](https://aws.amazon.com/tw/blogs/compute/introducing-the-new-serverless-lamp-stack/)
+`cdk-serverless-lamp` is a JSII construct library for AWS CDK that allows you to deploy the [New Serverless LAMP Stack](https://aws.amazon.com/tw/blogs/compute/introducing-the-new-serverless-lamp-stack/) by specifying the local `laravel` directory.
 
+By deploying this stack, it creates the following resources for you:
 
+1. Amazon API Gateway HTTP API
+2. AWS Lambda custom runtime with [Bref runtime](https://bref.sh/docs/runtimes/) support
+3. [WIP] Amazon Aurora for MySQL database with RDS proxy enabled
 
 ## Usage
 
@@ -92,5 +96,6 @@ _(credit to [@azole](https://medium.com/@azole/deploy-serverless-laravel-by-bref
 ## TODO
 
 - Add Aurora for MySQL stack 
+- Add RDS proxy support
 
 
