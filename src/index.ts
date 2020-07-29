@@ -111,7 +111,7 @@ export class ServerlessApi extends cdk.Construct {
     if(props.rdsProxy) {
       this.handler.addToRolePolicy(new iam.PolicyStatement({
         actions: [ 'rds-db:connect' ],
-        resources: [ props.rdsProxy.dbProxyArn ]
+        resources: [ props.rdsProxy.dbProxyArn ],
       }))
     }
 
@@ -251,7 +251,7 @@ export class DatabaseCluster extends cdk.Construct {
         instanceProps: {
           vpc: props.vpc,
           instanceType: props.instanceType ?? new InstanceType('t3.medium'),
-          securityGroups: [dbConnectionGroup]
+          securityGroups: [dbConnectionGroup],
         },
         masterUser: {
           username: masterUserSecret.secretValueFromJson('username').toString(),
@@ -280,9 +280,9 @@ export class DatabaseCluster extends cdk.Construct {
           'secretsmanager:GetResourcePolicy',
           'secretsmanager:GetSecretValue',
           'secretsmanager:DescribeSecret',
-          'secretsmanager:ListSecretVersionIds'
+          'secretsmanager:ListSecretVersionIds',
         ],
-        resources: [ masterUserSecret.secretArn ]
+        resources: [ masterUserSecret.secretArn ],
       }))
 
       const proxyOptions: rds.DatabaseProxyOptions = {

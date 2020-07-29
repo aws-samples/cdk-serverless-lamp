@@ -13,6 +13,7 @@ Name|Description
 
 Name|Description
 ----|-----------
+[DatabaseConfig](#cdk-serverless-lamp-databaseconfig)|*No description*
 [DatabaseProps](#cdk-serverless-lamp-databaseprops)|*No description*
 [ServerlessApiProps](#cdk-serverless-lamp-serverlessapiprops)|Construct properties for `ServerlessApi`.
 [ServerlessLaravelProps](#cdk-serverless-lamp-serverlesslaravelprops)|Construct properties for `ServerlessLaravel`.
@@ -43,7 +44,21 @@ new DatabaseCluster(scope: Construct, id: string, props: DatabaseProps)
   * **instanceType** (<code>[InstanceType](#aws-cdk-aws-ec2-instancetype)</code>)  instance type of the cluster. __*Default*__: t3.medium (or, more precisely, db.t3.medium)
   * **masterUserName** (<code>string</code>)  master username. __*Default*__: admin
   * **rdsProxy** (<code>boolean</code>)  enable the Amazon RDS proxy. __*Default*__: true
+  * **rdsProxyOptions** (<code>[DatabaseProxyOptions](#aws-cdk-aws-rds-databaseproxyoptions)</code>)  RDS Proxy Options. __*Optional*__
+  * **singleInstanceOnly** (<code>boolean</code>)  create single DB instance only or DB cluster with at least one read replica. __*Default*__: false
 
+
+
+### Properties
+
+
+Name | Type | Description 
+-----|------|-------------
+**masterPassword**🔹 | <code>[ISecret](#aws-cdk-aws-secretsmanager-isecret)</code> | <span></span>
+**masterUser**🔹 | <code>string</code> | <span></span>
+**dbCluster**?🔹 | <code>[IDatabaseCluster](#aws-cdk-aws-rds-idatabasecluster)</code> | __*Optional*__
+**dbInstance**?🔹 | <code>[IDatabaseInstance](#aws-cdk-aws-rds-idatabaseinstance)</code> | __*Optional*__
+**rdsProxy**?🔹 | <code>[DatabaseProxy](#aws-cdk-aws-rds-databaseproxy)</code> | __*Optional*__
 
 
 
@@ -67,8 +82,10 @@ new ServerlessApi(scope: Construct, id: string, props: ServerlessApiProps)
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[ServerlessApiProps](#cdk-serverless-lamp-serverlessapiprops)</code>)  *No description*
   * **brefLayerVersion** (<code>string</code>)  AWS Lambda layer version from the Bref runtime. 
+  * **databaseConfig** (<code>[DatabaseConfig](#cdk-serverless-lamp-databaseconfig)</code>)  Database configurations. __*Optional*__
   * **handler** (<code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code>)  custom lambda function for the API. __*Default*__: A Lambda function with Lavavel and Bref support will be created
   * **lambdaCodePath** (<code>string</code>)  custom lambda code asset path. __*Default*__: DEFAULT_LAMBDA_ASSET_PATH
+  * **rdsProxy** (<code>[IDatabaseProxy](#aws-cdk-aws-rds-idatabaseproxy)</code>)  RDS Proxy for the Lambda function. __*Default*__: no db proxy
   * **vpc** (<code>[IVpc](#aws-cdk-aws-ec2-ivpc)</code>)  The VPC for this stack. __*Optional*__
 
 
@@ -103,11 +120,29 @@ new ServerlessLaravel(scope: Construct, id: string, props: ServerlessLaravelProp
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[ServerlessLaravelProps](#cdk-serverless-lamp-serverlesslaravelprops)</code>)  *No description*
   * **brefLayerVersion** (<code>string</code>)  AWS Lambda layer version from the Bref runtime. 
+  * **databaseConfig** (<code>[DatabaseConfig](#cdk-serverless-lamp-databaseconfig)</code>)  Database configurations. __*Optional*__
   * **handler** (<code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code>)  custom lambda function for the API. __*Default*__: A Lambda function with Lavavel and Bref support will be created
   * **lambdaCodePath** (<code>string</code>)  custom lambda code asset path. __*Default*__: DEFAULT_LAMBDA_ASSET_PATH
+  * **rdsProxy** (<code>[IDatabaseProxy](#aws-cdk-aws-rds-idatabaseproxy)</code>)  RDS Proxy for the Lambda function. __*Default*__: no db proxy
   * **vpc** (<code>[IVpc](#aws-cdk-aws-ec2-ivpc)</code>)  The VPC for this stack. __*Optional*__
   * **laravelPath** (<code>string</code>)  path to your local laravel directory with bref. 
 
+
+
+
+## struct DatabaseConfig 🔹 <a id="cdk-serverless-lamp-databaseconfig"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**writerEndpoint**🔹 | <code>string</code> | The DB writer endpoint.
+**masterUserName**?🔹 | <code>string</code> | The DB master username.<br/>__*Optional*__
+**masterUserPasswordSecret**?🔹 | <code>[ISecret](#aws-cdk-aws-secretsmanager-isecret)</code> | The DB master password secret.<br/>__*Optional*__
+**readerEndpoint**?🔹 | <code>string</code> | The DB reader endpoint.<br/>__*Optional*__
 
 
 
@@ -125,6 +160,8 @@ Name | Type | Description
 **instanceType**?🔹 | <code>[InstanceType](#aws-cdk-aws-ec2-instancetype)</code> | instance type of the cluster.<br/>__*Default*__: t3.medium (or, more precisely, db.t3.medium)
 **masterUserName**?🔹 | <code>string</code> | master username.<br/>__*Default*__: admin
 **rdsProxy**?🔹 | <code>boolean</code> | enable the Amazon RDS proxy.<br/>__*Default*__: true
+**rdsProxyOptions**?🔹 | <code>[DatabaseProxyOptions](#aws-cdk-aws-rds-databaseproxyoptions)</code> | RDS Proxy Options.<br/>__*Optional*__
+**singleInstanceOnly**?🔹 | <code>boolean</code> | create single DB instance only or DB cluster with at least one read replica.<br/>__*Default*__: false
 
 
 
@@ -138,8 +175,10 @@ Construct properties for `ServerlessApi`.
 Name | Type | Description 
 -----|------|-------------
 **brefLayerVersion**🔹 | <code>string</code> | AWS Lambda layer version from the Bref runtime.
+**databaseConfig**?🔹 | <code>[DatabaseConfig](#cdk-serverless-lamp-databaseconfig)</code> | Database configurations.<br/>__*Optional*__
 **handler**?🔹 | <code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code> | custom lambda function for the API.<br/>__*Default*__: A Lambda function with Lavavel and Bref support will be created
 **lambdaCodePath**?🔹 | <code>string</code> | custom lambda code asset path.<br/>__*Default*__: DEFAULT_LAMBDA_ASSET_PATH
+**rdsProxy**?🔹 | <code>[IDatabaseProxy](#aws-cdk-aws-rds-idatabaseproxy)</code> | RDS Proxy for the Lambda function.<br/>__*Default*__: no db proxy
 **vpc**?🔹 | <code>[IVpc](#aws-cdk-aws-ec2-ivpc)</code> | The VPC for this stack.<br/>__*Optional*__
 
 
@@ -155,8 +194,10 @@ Name | Type | Description
 -----|------|-------------
 **brefLayerVersion**🔹 | <code>string</code> | AWS Lambda layer version from the Bref runtime.
 **laravelPath**🔹 | <code>string</code> | path to your local laravel directory with bref.
+**databaseConfig**?🔹 | <code>[DatabaseConfig](#cdk-serverless-lamp-databaseconfig)</code> | Database configurations.<br/>__*Optional*__
 **handler**?🔹 | <code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code> | custom lambda function for the API.<br/>__*Default*__: A Lambda function with Lavavel and Bref support will be created
 **lambdaCodePath**?🔹 | <code>string</code> | custom lambda code asset path.<br/>__*Default*__: DEFAULT_LAMBDA_ASSET_PATH
+**rdsProxy**?🔹 | <code>[IDatabaseProxy](#aws-cdk-aws-rds-idatabaseproxy)</code> | RDS Proxy for the Lambda function.<br/>__*Default*__: no db proxy
 **vpc**?🔹 | <code>[IVpc](#aws-cdk-aws-ec2-ivpc)</code> | The VPC for this stack.<br/>__*Optional*__
 
 

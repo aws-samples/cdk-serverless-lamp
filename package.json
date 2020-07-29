@@ -37,6 +37,7 @@
     "@aws-cdk/aws-apigateway": "1.55.0",
     "@aws-cdk/aws-apigatewayv2": "1.55.0",
     "@aws-cdk/aws-ec2": "1.55.0",
+    "@aws-cdk/aws-iam": "1.55.0",
     "@aws-cdk/aws-lambda": "1.55.0",
     "@aws-cdk/aws-secretsmanager": "1.55.0",
     "@aws-cdk/aws-rds": "1.55.0",
@@ -67,6 +68,7 @@
     "@aws-cdk/aws-apigateway": "1.55.0",
     "@aws-cdk/aws-apigatewayv2": "1.55.0",
     "@aws-cdk/aws-ec2": "1.55.0",
+    "@aws-cdk/aws-iam": "1.55.0",
     "@aws-cdk/aws-lambda": "1.55.0",
     "@aws-cdk/aws-secretsmanager": "1.55.0",
     "@aws-cdk/aws-rds": "1.55.0"
@@ -77,6 +79,7 @@
     "@aws-cdk/aws-apigateway": "1.55.0",
     "@aws-cdk/aws-apigatewayv2": "1.55.0",
     "@aws-cdk/aws-ec2": "1.55.0",
+    "@aws-cdk/aws-iam": "1.55.0",
     "@aws-cdk/aws-lambda": "1.55.0",
     "@aws-cdk/aws-secretsmanager": "1.55.0",
     "@aws-cdk/aws-rds": "1.55.0"
