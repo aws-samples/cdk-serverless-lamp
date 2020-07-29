@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/pahud/cdk-serverless-lamp/compare/v1.2.1...v1.3.0) (2020-07-29)
+
+
+### Features
+
+* **database:** support Amazon RDS and Amazon RDS Proxy ([7b4c8a0](https://github.com/pahud/cdk-serverless-lamp/commit/7b4c8a0629f403d1ca885becb4dd3f75a9035f02))
+
 ### [1.2.1](https://github.com/pahud/cdk-serverless-lamp/compare/v1.2.0...v1.2.1) (2020-07-27)
 
 ## [1.2.0](https://github.com/pahud/cdk-serverless-lamp/compare/v1.1.1...v1.2.0) (2020-07-27)
