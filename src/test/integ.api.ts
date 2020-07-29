@@ -19,7 +19,7 @@ const db = new DatabaseCluster(stack, 'DatabaseCluster', {
   vpc,
   instanceType: new InstanceType('t3.small'),
   rdsProxy: true,
-  singleInstanceOnly: true,
+  instanceCapacity: 1,
 })
 
 // the ServerlessLaravel

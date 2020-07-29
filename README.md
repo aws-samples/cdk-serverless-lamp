@@ -112,18 +112,16 @@ _(credit to [@azole](https://medium.com/@azole/deploy-serverless-laravel-by-bref
 
 ## Amazon RDS Cluster and Proxy
 
-Use `DatabaseCluster` construct to create your database clusters. Optionally specify `singleInstanceOnly: true` if you prefer single DB instance rather than a cluster which consists of one writer and at least one read replica.
-
-By default, **Amazon Aurora** DB cluster with MySQL engine version `2.08` will be created and you have one `writer` and one `replica`, however, if you opt in `singleInstanceOnly`, **Amazon RDS for MySQL** with single instance will be created instead.
-
-`Amaozn RDS proxy` will be created in either option above.
+Use `DatabaseCluster` construct to create your database clusters.
 
 
 ```ts
 const db = new DatabaseCluster(stack, 'DatabaseCluster', {
   vpc,
   instanceType: new InstanceType('t3.small'),
+  // enable rds proxy for this cluster
   rdsProxy: true,
-  singleInstanceOnly: false,
+  // one writer and one read replica
+  instanceCapacity: 2,
 })
 ```

@@ -191,11 +191,11 @@ export interface DatabaseProps {
   readonly rdsProxyOptions?: rds.DatabaseProxyOptions;
 
   /**
-   * create single DB instance only or DB cluster with at least one read replica
+   * How many replicas/instances to create. Has to be at least 1.
    * 
-   * @default false
+   * @default 1
    */
-  readonly singleInstanceOnly?: boolean
+  readonly instanceCapacity?: number
 
 }
 
@@ -203,9 +203,6 @@ export class DatabaseCluster extends cdk.Construct {
   readonly rdsProxy?: rds.DatabaseProxy
   readonly masterUser: string;
   readonly masterPassword: secretsmanager.ISecret;
-  readonly dbCluster?: rds.IDatabaseCluster;
-  readonly dbInstance?: rds.IDatabaseInstance;
-  private _runBefore: cdk.IDependable[] = [];
 
   constructor(scope: cdk.Construct, id: string, props: DatabaseProps) {
     super(scope, id);
@@ -233,40 +230,27 @@ export class DatabaseCluster extends cdk.Construct {
     });
     dbConnectionGroup.connections.allowInternally(Port.tcp(3306))
 
-    if (props.singleInstanceOnly === true) {
-      this.dbInstance = new rds.DatabaseInstance(this, 'DBInstance', {
-        engine: rds.DatabaseInstanceEngine.MYSQL,
-        masterUsername: masterUserSecret.secretValueFromJson('username').toString(),
-        masterUserPassword: masterUserSecret.secretValueFromJson('password'),
+    const dbCluster = new rds.DatabaseCluster(this, 'DBCluster', {
+      engine: rds.DatabaseClusterEngine.auroraMysql({
+        version: rds.AuroraMysqlEngineVersion.VER_2_08_1,
+      }),
+      instanceProps: {
         vpc: props.vpc,
-        securityGroups: [ dbConnectionGroup ],
-        instanceType: props.instanceType,
-        deletionProtection: false,
-      })
-    } else {
-      this.dbCluster = new rds.DatabaseCluster(this, 'DBCluster', {
-        engine: rds.DatabaseClusterEngine.auroraMysql({
-          version: rds.AuroraMysqlEngineVersion.VER_2_08_1,
-        }),
-        instanceProps: {
-          vpc: props.vpc,
-          instanceType: props.instanceType ?? new InstanceType('t3.medium'),
-          securityGroups: [dbConnectionGroup],
-        },
-        masterUser: {
-          username: masterUserSecret.secretValueFromJson('username').toString(),
-          password: masterUserSecret.secretValueFromJson('password'),
-        },
-        instances: 1,
-        removalPolicy: RemovalPolicy.DESTROY,
-      })
+        instanceType: props.instanceType ?? new InstanceType('t3.medium'),
+        securityGroups: [dbConnectionGroup],
+      },
+      masterUser: {
+        username: masterUserSecret.secretValueFromJson('username').toString(),
+        password: masterUserSecret.secretValueFromJson('password'),
+      },
+      instances: props.instanceCapacity,
+      removalPolicy: RemovalPolicy.DESTROY,
+    })
 
-      // Workaround for bug where TargetGroupName is not set but required
-      let cfnDbInstance = this.dbCluster.node.children.find((child: any) => {
-        return child instanceof rds.CfnDBInstance
-      }) as rds.CfnDBInstance
-      this._runBefore.push(cfnDbInstance)
-    }
+    // Workaround for bug where TargetGroupName is not set but required
+    let cfnDbInstance = dbCluster.node.children.find((child: any) => {
+      return child instanceof rds.CfnDBInstance
+    }) as rds.CfnDBInstance
 
     // enable the RDS proxy by default
     if (!props.rdsProxy === false) {
@@ -293,17 +277,11 @@ export class DatabaseCluster extends cdk.Construct {
         securityGroups: [ dbConnectionGroup ],
         role: rdsProxyRole,
       }
-      
+
       // create the RDS proxy
-      if (this.dbCluster) {
-        this.rdsProxy = this.dbCluster.addProxy('RDSProxy', proxyOptions)
-      }
-      if (this.dbInstance) {
-        this.rdsProxy = this.dbInstance.addProxy('RDSProxy', proxyOptions)
-      }
-      
+      this.rdsProxy = dbCluster.addProxy('RDSProxy', proxyOptions)
       // ensure DB instance is ready before creating the proxy
-      this.rdsProxy?.node.addDependency(...this._runBefore)
+      this.rdsProxy?.node.addDependency(cfnDbInstance)
     }
   }
 }
