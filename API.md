@@ -41,11 +41,11 @@ new DatabaseCluster(scope: Construct, id: string, props: DatabaseProps)
 * **props** (<code>[DatabaseProps](#cdk-serverless-lamp-databaseprops)</code>)  *No description*
   * **vpc** (<code>[IVpc](#aws-cdk-aws-ec2-ivpc)</code>)  The VPC for the DatabaseCluster. 
   * **engine** (<code>[IClusterEngine](#aws-cdk-aws-rds-iclusterengine)</code>)  database cluster engine. __*Default*__: AURORA_MYSQL
+  * **instanceCapacity** (<code>number</code>)  How many replicas/instances to create. __*Default*__: 1
   * **instanceType** (<code>[InstanceType](#aws-cdk-aws-ec2-instancetype)</code>)  instance type of the cluster. __*Default*__: t3.medium (or, more precisely, db.t3.medium)
   * **masterUserName** (<code>string</code>)  master username. __*Default*__: admin
   * **rdsProxy** (<code>boolean</code>)  enable the Amazon RDS proxy. __*Default*__: true
   * **rdsProxyOptions** (<code>[DatabaseProxyOptions](#aws-cdk-aws-rds-databaseproxyoptions)</code>)  RDS Proxy Options. __*Optional*__
-  * **singleInstanceOnly** (<code>boolean</code>)  create single DB instance only or DB cluster with at least one read replica. __*Default*__: false
 
 
 
@@ -56,8 +56,6 @@ Name | Type | Description
 -----|------|-------------
 **masterPassword**🔹 | <code>[ISecret](#aws-cdk-aws-secretsmanager-isecret)</code> | <span></span>
 **masterUser**🔹 | <code>string</code> | <span></span>
-**dbCluster**?🔹 | <code>[IDatabaseCluster](#aws-cdk-aws-rds-idatabasecluster)</code> | __*Optional*__
-**dbInstance**?🔹 | <code>[IDatabaseInstance](#aws-cdk-aws-rds-idatabaseinstance)</code> | __*Optional*__
 **rdsProxy**?🔹 | <code>[DatabaseProxy](#aws-cdk-aws-rds-databaseproxy)</code> | __*Optional*__
 
 
@@ -157,11 +155,11 @@ Name | Type | Description
 -----|------|-------------
 **vpc**🔹 | <code>[IVpc](#aws-cdk-aws-ec2-ivpc)</code> | The VPC for the DatabaseCluster.
 **engine**?🔹 | <code>[IClusterEngine](#aws-cdk-aws-rds-iclusterengine)</code> | database cluster engine.<br/>__*Default*__: AURORA_MYSQL
+**instanceCapacity**?🔹 | <code>number</code> | How many replicas/instances to create.<br/>__*Default*__: 1
 **instanceType**?🔹 | <code>[InstanceType](#aws-cdk-aws-ec2-instancetype)</code> | instance type of the cluster.<br/>__*Default*__: t3.medium (or, more precisely, db.t3.medium)
 **masterUserName**?🔹 | <code>string</code> | master username.<br/>__*Default*__: admin
 **rdsProxy**?🔹 | <code>boolean</code> | enable the Amazon RDS proxy.<br/>__*Default*__: true
 **rdsProxyOptions**?🔹 | <code>[DatabaseProxyOptions](#aws-cdk-aws-rds-databaseproxyoptions)</code> | RDS Proxy Options.<br/>__*Optional*__
-**singleInstanceOnly**?🔹 | <code>boolean</code> | create single DB instance only or DB cluster with at least one read replica.<br/>__*Default*__: false
 
 
 
