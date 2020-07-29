@@ -16,6 +16,7 @@ dist
 /test
 /.mergify.yml
 cdk.out
+cdk.context.json
 composer
 images
 yarn-error.log

@@ -11,7 +11,7 @@ By deploying this stack, it creates the following resources for you:
 
 1. Amazon API Gateway HTTP API
 2. AWS Lambda custom runtime with [Bref runtime](https://bref.sh/docs/runtimes/) support
-3. [WIP] Amazon Aurora for MySQL database with RDS proxy enabled
+3. Amazon Aurora for MySQL database cluster with RDS proxy enabled
 
 ## Usage
 
@@ -25,11 +25,21 @@ import * as path from 'path';
 const app = new App();
 const stack = new Stack(app, 'ServerlessLaraval');
 
-new ServerlessLaravel(stack, 'testing', {
-  // create a serverless Laraval with custom `brefLayerVersion`
+// the DatabaseCluster sharing the same vpc with the ServerlessLaravel
+const db = new DatabaseCluster(stack, 'DatabaseCluster', {
+  vpc,
+  instanceType: new InstanceType('t3.small'),
+  rdsProxy: true,
+})
+
+// the ServerlessLaravel
+new ServerlessLaravel(stack, 'ServerlessLaravel', {
   brefLayerVersion: 'arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:11',
-  // specify your local laravel path
   laravelPath: path.join(__dirname, '../../composer/laravel58-bref'),
+  vpc,
+  databaseConfig: {
+    writerEndpoint: db.rdsProxy!.endpoint,
+  },
 });
 ```
 
@@ -100,9 +110,20 @@ $app->useStoragePath($_ENV['APP_STORAGE'] ?? $app->storagePath());
 _(credit to [@azole](https://medium.com/@azole/deploy-serverless-laravel-by-bref-6f28b1e0d53a))_
 
 
-## TODO
+## Amazon RDS Cluster and Proxy
 
-- Add Aurora for MySQL stack 
-- Add RDS proxy support
+Use `DatabaseCluster` construct to create your database clusters. Optionally specify `singleInstanceOnly: true` if you prefer single DB instance rather than a cluster which consists of one writer and at least one read replica.
+
+By default, **Amazon Aurora** DB cluster with MySQL engine version `2.08` will be created and you have one `writer` and one `replica`, however, if you opt in `singleInstanceOnly`, **Amazon RDS for MySQL** with single instance will be created instead.
+
+`Amaozn RDS proxy` will be created in either option above.
 
 
+```ts
+const db = new DatabaseCluster(stack, 'DatabaseCluster', {
+  vpc,
+  instanceType: new InstanceType('t3.small'),
+  rdsProxy: true,
+  singleInstanceOnly: false,
+})
+```
