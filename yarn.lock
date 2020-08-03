@@ -4798,6 +4798,10 @@ projen@^0.3.20:
   version "0.3.20"
   resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.20.tgz#1d796b54b6643a02a9361fae860ff4c01a784894"
   integrity sha512-WoKCHl6n/KSlMBLbrSOTXkfoz1t/Jcl5dejkrOf6wenyIvnItismFsVxFwFCCXHDIw2MIZpXwnTssOFL88yTjg==
+projen@^0.3.7:
+  version "0.3.17"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.17.tgz#a851496c7a558c4b0582d50051474fe46e21466d"
+  integrity sha512-9uI8YoT2IEcHYno5w2Yxsdq21jSn4d4WNFfAldRw4krG9UwYlxdGUhM498UHCSqA2DjcmiXW1LPAQyhRf2YNcA==
   dependencies:
     decamelize "^4.0.0"
     fs-extra "^9.0.1"
