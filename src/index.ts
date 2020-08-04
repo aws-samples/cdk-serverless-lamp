@@ -5,7 +5,7 @@ import * as lambda from '@aws-cdk/aws-lambda';
 import * as rds from '@aws-cdk/aws-rds';
 import * as secretsmanager from '@aws-cdk/aws-secretsmanager';
 import * as path from 'path';
-import { IVpc, InstanceType, Vpc, SecurityGroup, Port } from '@aws-cdk/aws-ec2';
+import { IVpc, InstanceType, SecurityGroup, Port } from '@aws-cdk/aws-ec2';
 import * as iam from '@aws-cdk/aws-iam';
 import { RemovalPolicy } from '@aws-cdk/core';
 
@@ -80,7 +80,7 @@ export interface ServerlessApiProps {
  */
 export class ServerlessApi extends cdk.Construct {
   readonly handler: lambda.IFunction
-  readonly vpc: IVpc;
+  readonly vpc?: IVpc;
 
   constructor(scope: cdk.Construct, id: string, props: ServerlessApiProps) {
     super(scope, id);
@@ -88,7 +88,7 @@ export class ServerlessApi extends cdk.Construct {
     const DEFAULT_LAMBDA_ASSET_PATH = path.join(__dirname, '../composer/laravel58-bref')
     const DEFAULT_DB_MASTER_USER = 'admin'
 
-    this.vpc = props.vpc ?? new Vpc(this, 'Vpc', { maxAzs:3, natGateways: 1})
+    this.vpc = props.vpc
 
     this.handler = props.handler ?? new lambda.Function(this, 'handler', {
       runtime: lambda.Runtime.PROVIDED,
@@ -104,7 +104,7 @@ export class ServerlessApi extends cdk.Construct {
         DB_USER: props.databaseConfig?.masterUserName ?? DEFAULT_DB_MASTER_USER,
       },
       timeout: cdk.Duration.seconds(120),
-      vpc: this.vpc,
+      vpc: props.vpc,
     });
 
     // allow lambda execution role to connect to RDS proxy
