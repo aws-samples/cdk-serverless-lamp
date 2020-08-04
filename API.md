@@ -94,7 +94,7 @@ new ServerlessApi(scope: Construct, id: string, props: ServerlessApiProps)
 Name | Type | Description 
 -----|------|-------------
 **handler**🔹 | <code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code> | <span></span>
-**vpc**🔹 | <code>[IVpc](#aws-cdk-aws-ec2-ivpc)</code> | <span></span>
+**vpc**?🔹 | <code>[IVpc](#aws-cdk-aws-ec2-ivpc)</code> | __*Optional*__
 
 
 
