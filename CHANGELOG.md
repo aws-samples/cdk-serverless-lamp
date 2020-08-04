@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.6](https://github.com/pahud/cdk-serverless-lamp/compare/v1.3.5...v1.3.6) (2020-08-04)
+
+
+### Bug Fixes
+
+* **api:** do not create new Vpc if props.vpc undefinied ([612e93d](https://github.com/pahud/cdk-serverless-lamp/commit/612e93d7c0f709c10175d40bc31a2abf92091fb3)), closes [#20](https://github.com/pahud/cdk-serverless-lamp/issues/20)
+
 ### [1.3.5](https://github.com/pahud/cdk-serverless-lamp/compare/v1.3.4...v1.3.5) (2020-08-04)
 
 ### 1.3.4 (2020-08-04)
