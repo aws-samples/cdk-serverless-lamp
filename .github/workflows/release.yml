@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch: {}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,11 +13,19 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.17.0
-      - run: npx projen@0.3.7
+      - run: npx projen@0.3.20
       - run: yarn install --frozen-lockfile
-      - run: yarn build
-      - name: Anti-tamper check
+      - name: Anti-tamper check after bootstrapping
         run: git diff --exit-code
+      - name: Set git identity
+        run: |-
+          git config user.name "Auto-bump"
+          git config user.email "github-actions@github.com"
+      - run: yarn bump
+      - run: yarn build
+      - name: Anti-tamper check after build
+        run: git diff --exit-code
+      - run: git push --follow-tags origin $GITHUB_REF
       - name: Upload artifact
         uses: actions/upload-artifact@v2.1.1
         with:
