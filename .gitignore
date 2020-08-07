@@ -68,3 +68,7 @@ cdk.context.json
 !/tsconfig.jest.json
 !/test
 !/API.md
+
+# extras
+/codebase
+docker-compose.yml

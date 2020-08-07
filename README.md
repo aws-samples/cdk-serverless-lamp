@@ -35,7 +35,7 @@ const db = new DatabaseCluster(stack, 'DatabaseCluster', {
 // the ServerlessLaravel
 new ServerlessLaravel(stack, 'ServerlessLaravel', {
   brefLayerVersion: 'arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:11',
-  laravelPath: path.join(__dirname, '../../composer/laravel58-bref'),
+  laravelPath: path.join(__dirname, '../../codebase'),
   vpc,
   databaseConfig: {
     writerEndpoint: db.rdsProxy!.endpoint,
@@ -47,73 +47,55 @@ On deploy complete, the API Gateway URL will be returned in the Output. Click th
 
 ![laravel-welcome](./images/laravel.png)
 
-
 ## Prepare the Laravel and bref
 
 ```bash
 $ git clone https://github.com/pahud/cdk-serverless-lamp.git
-$ cd cdk-serverless-lamp
-$ mkdir composer && cd composer
+$ cd cdk-serverless-lamp && mkdir codebase
 # create a laravel project
 $ docker run --rm -ti \
   --volume $PWD:/app \
-  composer create-project laravel/laravel laravel58-bref --prefer-dist
+  composer create-project --prefer-dist laravel/laravel ./codebase
 # enter this project
-$ cd laravel58-bref
+cd codebase
 # install bref in the vendor
 $ docker run --rm -ti \
   --volume $PWD:/app \
-  composer require bref/bref
+  composer require bref/bref bref/laravel-bridge
 ```
 
+_(more information can be found in [bref documentation](https://bref.sh/docs/frameworks/laravel.html))_
 
-## Configure Laravel with Bref for Lambda
+what if you like to do some local develop ?
 
-According to the Bref [document](https://bref.sh/docs/frameworks/laravel.html), we need configure the environment before it can be deployed on Lambda:
+add follow to `docker-compose.yml`
 
-edit the `.env` file
-```
-VIEW_COMPILED_PATH=/tmp/storage/framework/views
-
-# We cannot store sessions to disk: if you don't need sessions (e.g. API) then use `array`
-# If you write a website, use `cookie` or store sessions in database.
-SESSION_DRIVER=cookie
-
-# Logging to stderr allows the logs to end up in Cloudwatch
-LOG_CHANNEL=stderr
-```
-
-edit the `app/Providers/AppServiceProvider.php`
-
-```php
-    public function boot()
-    {
-        // Make sure the directory for compiled views exist
-        if (! is_dir(config('view.compiled'))) {
-            mkdir(config('view.compiled'), 0755, true);
-        }
-    }
+```docker-compose
+version: "3.5"
+services:
+  web:
+    image: bref/fpm-dev-gateway
+    ports:
+      - "8000:80"
+    volumes:
+      - ./laravel:/var/task
+    depends_on:
+      - php
+    environment:
+      HANDLER: public/index.php
+  php:
+    image: bref/php-74-fpm-dev
+    volumes:
+      - ./laravel:/var/task
 ```
 
-edit `bootstrap/app.php`
+and run this command `docker-compose up -d` and now you can access <http://localhost:8000>.
 
-```php
-
-$app = new Illuminate\Foundation\Application(
-    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
-);
-
-// add the following statement
-// we will configure APP_STORAGE = '/tmp' in Lambda env var
-$app->useStoragePath($_ENV['APP_STORAGE'] ?? $app->storagePath());
-```
-_(credit to [@azole](https://medium.com/@azole/deploy-serverless-laravel-by-bref-6f28b1e0d53a))_
-
+_(more information can be found in [bref documentation](https://bref.sh/docs/local-development.html))_
 
 ## Amazon RDS Cluster and Proxy
 
 Use `DatabaseCluster` construct to create your database clusters.
-
 
 ```ts
 const db = new DatabaseCluster(stack, 'DatabaseCluster', {
