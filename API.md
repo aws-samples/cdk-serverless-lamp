@@ -103,7 +103,7 @@ Name | Type | Description
 Use `ServerlessLaravel` to create the serverless Laravel resource.
 
 __Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [ServerlessApi](#cdk-serverless-lamp-serverlessapi)
+__Extends__: [Construct](#aws-cdk-core-construct)
 
 ### Initializer
 

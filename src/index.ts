@@ -138,16 +138,17 @@ export interface ServerlessLaravelProps extends ServerlessApiProps {
 /**
  * Use `ServerlessLaravel` to create the serverless Laravel resource
  */
-export class ServerlessLaravel extends ServerlessApi {
+export class ServerlessLaravel extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: ServerlessLaravelProps) {
-    super(scope, id, {
+    super(scope, id);
+    new ServerlessApi(this, id, {
       lambdaCodePath: props.laravelPath,
       brefLayerVersion: props.brefLayerVersion,
       handler: props.handler,
       vpc: props.vpc,
       databaseConfig: props.databaseConfig,
       rdsProxy: props.rdsProxy,
-    });
+    })
   }
 }
 
