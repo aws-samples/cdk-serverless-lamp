@@ -68,8 +68,8 @@ project.addFields({
 });
 
 
-const common_exclude = ['cdk.out', 'cdk.context.json', '/codebase', 'docker-compose.yml', 'images', 'yarn-error.log']
-project.npmignore.exclude(...common_exclude);
+const common_exclude = ['cdk.out', 'cdk.context.json', 'docker-compose.yml', 'images', 'yarn-error.log']
+project.npmignore.exclude(...common_exclude, '/codebase');
 project.gitignore.exclude(...common_exclude);
 
 project.synth();

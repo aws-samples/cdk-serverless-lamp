@@ -25,7 +25,7 @@ const db = new DatabaseCluster(stack, 'DatabaseCluster', {
 // the ServerlessLaravel
 new ServerlessLaravel(stack, 'ServerlessLaravel', {
   brefLayerVersion: 'arn:aws:lambda:ap-northeast-1:209497400698:layer:php-74-fpm:11',
-  laravelPath: path.join(__dirname, '../../composer/laravel58-bref'),
+  laravelPath: path.join(__dirname, '../../codebase'),
   vpc,
   databaseConfig: {
     writerEndpoint: db.rdsProxy!.endpoint,

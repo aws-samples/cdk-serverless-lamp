@@ -42,7 +42,6 @@ jspm_packages/
 tsconfig.json
 cdk.out
 cdk.context.json
-/codebase
 docker-compose.yml
 images
 yarn-error.log

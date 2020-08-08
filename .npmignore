@@ -17,10 +17,10 @@ dist
 /test
 cdk.out
 cdk.context.json
-/codebase
 docker-compose.yml
 images
 yarn-error.log
+/codebase
 !/lib
 !/lib/**/*.js
 !/lib/**/*.d.ts
