@@ -3,7 +3,7 @@ const {
   Semver
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.56.0';
+const AWS_CDK_LATEST_RELEASE = '1.57.0';
 const CONSTRUCTS_VERSION = '3.0.4'
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
@@ -22,6 +22,7 @@ const project = new JsiiProject({
     '@types/node': Semver.caret('14.0.11'),
     'ts-jest': Semver.caret('25.3.1'),
     'jest': Semver.caret('25.5.0'),
+    'dot-prop': Semver.caret('5.1.1'),
   },
   peerDependencies: {
     constructs: Semver.caret(CONSTRUCTS_VERSION),
@@ -66,7 +67,9 @@ project.addFields({
   }
 });
 
-project.npmignore.exclude('cdk.out', 'cdk.context.json', 'composer', 'images', 'yarn-error.log');
-project.gitignore.exclude('cdk.out', 'cdk.context.json');
+
+const common_exclude = ['cdk.out', 'cdk.context.json', '/codebase', 'docker-compose.yml', 'images', 'yarn-error.log']
+project.npmignore.exclude(...common_exclude);
+project.gitignore.exclude(...common_exclude);
 
 project.synth();

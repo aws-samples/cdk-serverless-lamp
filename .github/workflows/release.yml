@@ -13,9 +13,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.17.0
-      - run: npx projen@0.3.20
+      - run: npx projen@0.3.25
       - run: yarn install --frozen-lockfile
-      - name: Anti-tamper check after bootstrapping
+      - name: Anti-tamper check
         run: git diff --exit-code
       - name: Set git identity
         run: |-
@@ -23,7 +23,7 @@ jobs:
           git config user.email "github-actions@github.com"
       - run: yarn bump
       - run: yarn build
-      - name: Anti-tamper check after build
+      - name: Anti-tamper check
         run: git diff --exit-code
       - run: git push --follow-tags origin $GITHUB_REF
       - name: Upload artifact

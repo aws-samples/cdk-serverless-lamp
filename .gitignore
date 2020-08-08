@@ -42,6 +42,10 @@ jspm_packages/
 tsconfig.json
 cdk.out
 cdk.context.json
+/codebase
+docker-compose.yml
+images
+yarn-error.log
 !# synthesized by projen, (do not modify by hand)
 !/package.json
 !# synthesized by projen, (do not modify by hand)
@@ -61,6 +65,8 @@ cdk.context.json
 !/.mergify.yml
 !# synthesized by projen, (do not modify by hand)
 !/.github/dependabot.yml
+!# synthesized by projen, (do not modify by hand)
+!/.github/workflows/projenupgrade.yml
 !/src
 !# synthesized by projen, (do not modify by hand)
 !/.eslintrc.json
@@ -68,7 +74,3 @@ cdk.context.json
 !/tsconfig.jest.json
 !/test
 !/API.md
-
-# extras
-/codebase
-docker-compose.yml
