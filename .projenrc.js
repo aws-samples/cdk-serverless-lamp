@@ -24,6 +24,9 @@ const project = new JsiiProject({
     'jest': Semver.caret('25.5.0'),
     'dot-prop': Semver.caret('5.1.1'),
   },
+  peerDependencyOptions: {
+    pinnedDevDependency: false,
+  },
   peerDependencies: {
     constructs: Semver.caret(CONSTRUCTS_VERSION),
     '@aws-cdk/core': Semver.caret(AWS_CDK_LATEST_RELEASE),
