@@ -26,7 +26,7 @@ $ docker run --rm -ti \
   --volume $PWD:/app \
   composer create-project --prefer-dist laravel/laravel ./codebase
 # install bref/bref and bref/laravel-bridge in the vendor
-$ code codebase
+$ cd codebase
 $ docker run --rm -ti \
   --volume $PWD:/app \
   composer require bref/bref bref/laravel-bridge
