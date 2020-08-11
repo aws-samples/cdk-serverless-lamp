@@ -254,7 +254,7 @@ export class DatabaseCluster extends cdk.Construct {
     }) as rds.CfnDBInstance
 
     // enable the RDS proxy by default
-    if (!props.rdsProxy === false) {
+    if (props.rdsProxy !== false) {
       // create iam role for RDS proxy
       const rdsProxyRole = new iam.Role(this, 'RdsProxyRole', {
         assumedBy: new iam.ServicePrincipal('rds.amazonaws.com'),
