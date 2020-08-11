@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.3.12 (2020-08-11)
+
+
+### Bug Fixes
+
+* **rdsPoxy:** rdsProxy is not enabled by default ([3c91fbb](https://github.com/pahud/cdk-serverless-lamp/commit/3c91fbb7c371f1e58026fa2b732dc5080b4d0861)), closes [#29](https://github.com/pahud/cdk-serverless-lamp/issues/29)
+
 ### 1.3.11 (2020-08-10)
 
 ### 1.3.10 (2020-08-10)
