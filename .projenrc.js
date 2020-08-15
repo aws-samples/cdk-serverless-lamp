@@ -3,8 +3,8 @@ const {
   Semver
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.58.0';
-const CONSTRUCTS_VERSION = '3.0.4'
+const AWS_CDK_LATEST_RELEASE = '1.59.0';
+const CONSTRUCTS_VERSION = '3.0.4';
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
 
