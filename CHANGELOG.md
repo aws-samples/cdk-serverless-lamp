@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.4.0 (2020-08-17)
+
+
+### Features
+
+* **core:** add ServerlessLaravel to create Laravel app ([cd1ecbf](https://github.com/pahud/cdk-serverless-lamp/commit/cd1ecbf9a541b116b19cab460696ea2b6cd1cda8))
+* **database:** support Amazon RDS and Amazon RDS Proxy ([53cc3de](https://github.com/pahud/cdk-serverless-lamp/commit/53cc3de3721ba3aa87964fa96614658176a47517))
+* **serverless-api:** support laravel framework with brefi ([3820d7b](https://github.com/pahud/cdk-serverless-lamp/commit/3820d7b0c6e40ce4cba3fbd73d0ceb87aee9c4ff))
+
+
+### Bug Fixes
+
+* **api:** do not create new Vpc if props.vpc undefinied ([e9719bd](https://github.com/pahud/cdk-serverless-lamp/commit/e9719bdce407d22773f9ec33c6ca2ceeb4cbfa40)), closes [#20](https://github.com/pahud/cdk-serverless-lamp/issues/20)
+* **database:** instanceCapacity ([bf11ff4](https://github.com/pahud/cdk-serverless-lamp/commit/bf11ff472777f84f72773a7efc57362aa633f197))
+* **rdsPoxy:** rdsProxy is not enabled by default ([acf513b](https://github.com/pahud/cdk-serverless-lamp/commit/acf513bab378565f4c047e4082e4b1022917e007)), closes [#29](https://github.com/pahud/cdk-serverless-lamp/issues/29)
+
 ### [1.3.14](https://github.com/pahud/cdk-serverless-lamp/compare/v1.3.13...v1.3.14) (2020-08-15)
 
 ### [1.3.13](https://github.com/pahud/cdk-serverless-lamp/compare/v1.3.12...v1.3.13) (2020-08-13)
