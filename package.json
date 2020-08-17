@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pahud/cdk-serverless-lamp.git"
+    "url": "https://github.com/aws-samples/cdk-serverless-lamp.git"
   },
   "bin": {
     "jsii-release-npm": "bin/jsii-release-npm"

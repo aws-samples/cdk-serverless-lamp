@@ -12,7 +12,7 @@ const project = new JsiiProject({
   name: PROJECT_NAME,
   jsiiVersion: Semver.caret('1.5.0'),
   description: PROJECT_DESCRIPTION,
-  repository: 'https://github.com/pahud/cdk-serverless-lamp.git',
+  repository: 'https://github.com/aws-samples/cdk-serverless-lamp.git',
   authorName: 'Pahud Hsieh',
   authorEmail: 'hunhsieh@amazon.com',
   stability: 'experimental',
@@ -71,7 +71,7 @@ project.addFields({
 });
 
 
-const common_exclude = ['cdk.out', 'cdk.context.json', 'docker-compose.yml', 'images', 'yarn-error.log']
+const common_exclude = ['cdk.out', 'cdk.context.json', 'docker-compose.yml', 'images', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude, '/codebase');
 project.gitignore.exclude(...common_exclude);
 
