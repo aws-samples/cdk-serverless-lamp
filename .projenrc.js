@@ -3,7 +3,7 @@ const {
   Semver
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.59.0';
+const AWS_CDK_LATEST_RELEASE = '1.60.0';
 const CONSTRUCTS_VERSION = '3.0.4';
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
@@ -17,37 +17,34 @@ const project = new JsiiProject({
   authorEmail: 'hunhsieh@amazon.com',
   stability: 'experimental',
   devDependencies: {
-    '@aws-cdk/assert': Semver.caret(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/assert': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@types/jest': Semver.caret('25.2.3'),
     '@types/node': Semver.caret('14.0.11'),
     'ts-jest': Semver.caret('25.3.1'),
     'jest': Semver.caret('25.5.0'),
     'dot-prop': Semver.caret('5.1.1'),
   },
-  peerDependencyOptions: {
-    pinnedDevDependency: false,
-  },
   peerDependencies: {
     constructs: Semver.caret(CONSTRUCTS_VERSION),
-    '@aws-cdk/core': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-apigateway': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-apigatewayv2': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-ec2': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-iam': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-lambda': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-secretsmanager': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-rds': Semver.caret(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-apigateway': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-apigatewayv2': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-ec2': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-lambda': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-secretsmanager': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-rds': Semver.pinned(AWS_CDK_LATEST_RELEASE),
   },
   dependencies: {
     constructs: Semver.caret(CONSTRUCTS_VERSION),
-    '@aws-cdk/core': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-apigateway': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-apigatewayv2': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-ec2': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-iam': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-lambda': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-secretsmanager': Semver.caret(AWS_CDK_LATEST_RELEASE),
-    '@aws-cdk/aws-rds': Semver.caret(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-apigateway': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-apigatewayv2': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-ec2': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-iam': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-lambda': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-secretsmanager': Semver.pinned(AWS_CDK_LATEST_RELEASE),
+    '@aws-cdk/aws-rds': Semver.pinned(AWS_CDK_LATEST_RELEASE),
   },
   python: {
     distName: 'cdk-serverless-lamp',
