@@ -96,12 +96,12 @@
     "node": ">= 10.17.0"
   },
   "license": "Apache-2.0",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "types": "lib/index.d.ts",
   "jest": {
     "clearMocks": true,
     "collectCoverage": true,
-    "coveragePathIgnorePatterns": [
+    "coveragePathIgnorePatterns":
       "/node_modules/"
     ],
     "testPathIgnorePatterns": [
