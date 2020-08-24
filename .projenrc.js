@@ -25,7 +25,7 @@ const project = new JsiiProject({
     'dot-prop': Semver.caret('5.1.1'),
   },
   peerDependencies: {
-    constructs: Semver.caret(CONSTRUCTS_VERSION),
+    constructs: Semver.pinned(CONSTRUCTS_VERSION),
     '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-apigateway': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-apigatewayv2': Semver.pinned(AWS_CDK_LATEST_RELEASE),
@@ -36,7 +36,7 @@ const project = new JsiiProject({
     '@aws-cdk/aws-rds': Semver.pinned(AWS_CDK_LATEST_RELEASE),
   },
   dependencies: {
-    constructs: Semver.caret(CONSTRUCTS_VERSION),
+    constructs: Semver.pinned(CONSTRUCTS_VERSION),
     '@aws-cdk/core': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-apigateway': Semver.pinned(AWS_CDK_LATEST_RELEASE),
     '@aws-cdk/aws-apigatewayv2': Semver.pinned(AWS_CDK_LATEST_RELEASE),
