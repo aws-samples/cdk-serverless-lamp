@@ -101,7 +101,7 @@
   "jest": {
     "clearMocks": true,
     "collectCoverage": true,
-    "coveragePathIgnorePatterns":
+    "coveragePathIgnorePatterns": [
       "/node_modules/"
     ],
     "testPathIgnorePatterns": [
