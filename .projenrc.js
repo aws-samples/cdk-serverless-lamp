@@ -2,7 +2,7 @@ const {
   ConstructLibraryAws,
 } = require('projen');
 
-const LAST_AWSCDK_VERSION = '1.60.0';
+const LAST_AWSCDK_VERSION = '1.61.0';
 
 const project = new ConstructLibraryAws({
   "authorName": "Pahud Hsieh",
