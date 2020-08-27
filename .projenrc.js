@@ -2,8 +2,7 @@ const {
   ConstructLibraryAws,
 } = require('projen');
 
-
-const LAST_AWSCDK_VERSION = '1.60.0'
+const LAST_AWSCDK_VERSION = '1.60.0';
 
 const project = new ConstructLibraryAws({
   "authorName": "Pahud Hsieh",
@@ -19,7 +18,7 @@ const project = new ConstructLibraryAws({
 
   catalog: {
     twitter: 'pahudnet',
-    announce: 'false'
+    announce: false
   },
 
   // creates PRs for projen upgrades
@@ -38,8 +37,8 @@ const project = new ConstructLibraryAws({
   ],
 
   python: {
-    distName: 'cdk-spot-one',
-    module: 'cdk_spot_one'
+    distName: 'cdk-serverless-lamp',
+    module: 'cdk_serverless_lamp'
   }
 });
 

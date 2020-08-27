@@ -113,8 +113,8 @@
     "outdir": "dist",
     "targets": {
       "python": {
-        "distName": "cdk-spot-one",
-        "module": "cdk_spot_one"
+        "distName": "cdk-serverless-lamp",
+        "module": "cdk_serverless_lamp"
       }
     },
     "tsc": {
@@ -124,6 +124,6 @@
   },
   "awscdkio": {
     "twitter": "pahudnet",
-    "announce": "false"
+    "announce": false
   }
 }
