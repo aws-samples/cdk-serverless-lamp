@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.7](https://github.com/aws-samples/cdk-serverless-lamp/compare/v1.4.5...v1.4.7) (2020-08-27)
+
 ### 1.4.6 (2020-08-27)
 
 ### 1.4.5 (2020-08-24)
