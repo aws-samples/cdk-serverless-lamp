@@ -2,14 +2,17 @@ const {
   ConstructLibraryAws,
 } = require('projen');
 
-const LAST_AWSCDK_VERSION = '1.61.1';
+const AWS_CDK_LATEST_RELEASE = '1.61.1';
+const PROJEN_PINNED_VERSION = '0.3.47';
+const PROJECT_NAME = 'cdk-serverless-lamp';
+const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
 
 const project = new ConstructLibraryAws({
-  "authorName": "Pahud Hsieh",
-  "authorEmail": "hunhsieh@amazon.com",
-  "name": "cdk-serverless-lamp",
-  "description": "A JSII construct lib to build AWS Serverless LAMP with AWS CDK",
-  "repository": "https://github.com/aws-samples/cdk-serverless-lamp.git",
+  authorName: "Pahud Hsieh",
+  authorEmail: "hunhsieh@amazon.com",
+  name: PROJECT_NAME,
+  description: PROJECT_DESCRIPTION,
+  repository: "https://github.com/aws-samples/cdk-serverless-lamp.git",
   keywords: [
     'aws',
     'serverless',
@@ -24,7 +27,7 @@ const project = new ConstructLibraryAws({
   // creates PRs for projen upgrades
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 
-  cdkVersion: LAST_AWSCDK_VERSION,
+  cdkVersion: AWS_CDK_LATEST_RELEASE,
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-apigateway',
@@ -41,6 +44,10 @@ const project = new ConstructLibraryAws({
     module: 'cdk_serverless_lamp'
   }
 });
+
+if (PROJEN_PINNED_VERSION) {
+  project.devDependencies.projen = PROJEN_PINNED_VERSION;
+}
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'docker-compose.yml', 'images', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude, '/codebase');
