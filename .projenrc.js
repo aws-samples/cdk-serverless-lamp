@@ -3,6 +3,7 @@ const {
 } = require('projen');
 
 const AWS_CDK_LATEST_RELEASE = '1.61.1';
+const PROJEN_PINNED_VERSION = '0.3.50';
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
 
@@ -43,6 +44,10 @@ const project = new ConstructLibraryAws({
     module: 'cdk_serverless_lamp'
   }
 });
+
+if (PROJEN_PINNED_VERSION) {
+  project.devDependencies.projen = PROJEN_PINNED_VERSION;
+}
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'docker-compose.yml', 'images', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude, '/codebase');

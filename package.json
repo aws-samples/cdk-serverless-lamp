@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "npx projen start",
-    "projen": "node .projenrc.js",
+    "projen": "node .projenrc.js && yarn -s install",
     "no-changes": "(git log --oneline -1 | grep -q \"chore(release):\") && echo \"No changes to release.\"",
     "bump": "yarn --silent no-changes || standard-version",
     "release": "yarn --silent no-changes || (yarn bump && git push --follow-tags origin master)",
@@ -50,7 +50,7 @@
     "jsii-pacmak": "^1.11.0",
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
-    "projen": "^0.3.51",
+    "projen": "0.3.50",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
