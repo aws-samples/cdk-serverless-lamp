@@ -2767,7 +2767,7 @@ glob-parent@^5.0.0:
   dependencies:
     is-glob "^4.0.1"
 
-glob@^7.0.0, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
+glob@^7, glob@^7.0.0, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
   integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
@@ -4823,15 +4823,16 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@0.3.50:
-  version "0.3.50"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.50.tgz#4a64fe0fa57d30198723f9c14bac22731e144cd9"
-  integrity sha512-CRLRNswbw4tUf64ASUihi+XBQGfcKkc3Vy7CUpu1j1gEfZ3uvtgGi1afV8/9r02YvtQsxIqULhrJDky+TyKFTg==
+projen@^0.3.57:
+  version "0.3.57"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.57.tgz#c1a855ac064d8c6bab60a17fa8d0797ec4045cb2"
+  integrity sha512-v6tg3KM+74eO6AITwwhj6CMLTZF7EeOanELEzMJB8F0x/FTmcW9MZKq5NZtt+hGfD0w2I70RvcCIwb/RC7X7/g==
   dependencies:
     decamelize "^4.0.0"
     fs-extra "^9.0.1"
-    glob "^7.1.6"
+    glob "^7"
     inquirer "^7.3.3"
+    semver "^7.3.2"
     yaml "^1.10.0"
     yargs "^15.4.1"
 
