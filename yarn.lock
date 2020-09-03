@@ -912,9 +912,9 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/jest@26.x", "@types/jest@^26.0.7":
-  version "26.0.10"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.10.tgz#8faf7e9756c033c39014ae76a7329efea00ea607"
-  integrity sha512-i2m0oyh8w/Lum7wWK/YOZJakYF8Mx08UaKA1CtbmFeDquVhAEdA7znacsVSf2hJ1OQ/OfVMGN90pw/AtzF8s/Q==
+  version "26.0.12"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.12.tgz#0f20fef9e74f55a312530284e6178f3b3254f501"
+  integrity sha512-vZOFjm562IPb1EmaKxMjdcouxVb1l3NqoUH4XC4tDQ2R/AWde+0HXBUhyfc6L+7vc3mJ393U+5vr3nH2CLSVVg==
   dependencies:
     jest-diff "^25.2.1"
     pretty-format "^25.2.1"
@@ -3807,9 +3807,9 @@ jsii-diff@^1.11.0:
     yargs "^15.4.1"
 
 jsii-docgen@^1.3.2:
-  version "1.4.27"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.4.27.tgz#4976baf49be77f52f64ed0872ff45a348c371c49"
-  integrity sha512-4kgynCoTvqAhsxDZmt1SujNR8q/J4yJxe/uwpiKVsL8riX84JAmZ2HcI2T8iZAeJe4F7vWqG1XpT7VoTuJyWSw==
+  version "1.4.28"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.4.28.tgz#a701d0e4ee2dca57e480a93758d77d1a7350ff21"
+  integrity sha512-1ow7DKGa1u6yBYosq/pABaQ6+Z65NZ+zR/nmZCmsK4k0lNL+pbe7LvdRfYF0lS5dUuKDKqJGBSVP8G92NDKJcg==
   dependencies:
     "@jsii/spec" "^1.9.0"
     fs-extra "^9.0.0"
@@ -3846,9 +3846,9 @@ jsii-reflect@^1.12.0, jsii-reflect@^1.9.0:
     yargs "^15.4.1"
 
 jsii-release@^0.1.6:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.1.9.tgz#da139e68da8841d3f8ed5c0c64301dc3c326363b"
-  integrity sha512-aV6qHRjDr41ETEwtXm6cgxQ5rzbRdQ3iNvQ+gzayJT8Ke2UvRHrduY5XkdJ3ZZ5FWqRyxHpY/RCVW7DysT+9Xw==
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.1.10.tgz#7344a37daca79906f4a65c3c53764a3326df3776"
+  integrity sha512-uX+S7FHnB+IDuTGGZBpOwLO+BJjfHWpggj11YiY73oy7b8Y6PSVUmVR+ZLSb8TdpmXMAVyWakLNv4p88WLczHg==
 
 jsii-rosetta@^1.12.0:
   version "1.12.0"
