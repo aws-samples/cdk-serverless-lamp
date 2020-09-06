@@ -34,7 +34,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.61.1",
+    "@aws-cdk/assert": "^1.62.0",
     "@types/jest": "^26.0.7",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
@@ -50,31 +50,31 @@
     "jsii-pacmak": "^1.11.0",
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
-    "projen": "^0.3.57",
+    "projen": "^0.3.58",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-apigateway": "^1.61.1",
-    "@aws-cdk/aws-apigatewayv2": "^1.61.1",
-    "@aws-cdk/aws-ec2": "^1.61.1",
-    "@aws-cdk/aws-iam": "^1.61.1",
-    "@aws-cdk/aws-lambda": "^1.61.1",
-    "@aws-cdk/aws-rds": "^1.61.1",
-    "@aws-cdk/aws-secretsmanager": "^1.61.1",
-    "@aws-cdk/core": "^1.61.1",
+    "@aws-cdk/aws-apigateway": "^1.62.0",
+    "@aws-cdk/aws-apigatewayv2": "^1.62.0",
+    "@aws-cdk/aws-ec2": "^1.62.0",
+    "@aws-cdk/aws-iam": "^1.62.0",
+    "@aws-cdk/aws-lambda": "^1.62.0",
+    "@aws-cdk/aws-rds": "^1.62.0",
+    "@aws-cdk/aws-secretsmanager": "^1.62.0",
+    "@aws-cdk/core": "^1.62.0",
     "constructs": "^3.0.4"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "^1.61.1",
-    "@aws-cdk/aws-apigatewayv2": "^1.61.1",
-    "@aws-cdk/aws-ec2": "^1.61.1",
-    "@aws-cdk/aws-iam": "^1.61.1",
-    "@aws-cdk/aws-lambda": "^1.61.1",
-    "@aws-cdk/aws-rds": "^1.61.1",
-    "@aws-cdk/aws-secretsmanager": "^1.61.1",
-    "@aws-cdk/core": "^1.61.1"
+    "@aws-cdk/aws-apigateway": "^1.62.0",
+    "@aws-cdk/aws-apigatewayv2": "^1.62.0",
+    "@aws-cdk/aws-ec2": "^1.62.0",
+    "@aws-cdk/aws-iam": "^1.62.0",
+    "@aws-cdk/aws-lambda": "^1.62.0",
+    "@aws-cdk/aws-rds": "^1.62.0",
+    "@aws-cdk/aws-secretsmanager": "^1.62.0",
+    "@aws-cdk/core": "^1.62.0"
   },
   "bundledDependencies": [],
   "keywords": [

@@ -2,7 +2,7 @@ const {
   ConstructLibraryAws,
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.61.1';
+const AWS_CDK_LATEST_RELEASE = '1.62.0';
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
 
