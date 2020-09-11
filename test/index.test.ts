@@ -1,4 +1,4 @@
-import { ServerlessApi, DatabaseCluster } from '../';
+import { ServerlessApi, DatabaseCluster } from '../src';
 import { App, Stack } from '@aws-cdk/core';
 import * as path from 'path';
 import '@aws-cdk/assert/jest';
