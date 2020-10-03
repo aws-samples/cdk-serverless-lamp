@@ -1,7 +1,7 @@
-import { ServerlessLaravel, DatabaseCluster } from './index';
-import * as cdk from '@aws-cdk/core';
-import { Vpc, InstanceType } from '@aws-cdk/aws-ec2';
 import * as path from 'path';
+import { Vpc, InstanceType } from '@aws-cdk/aws-ec2';
+import * as cdk from '@aws-cdk/core';
+import { ServerlessLaravel, DatabaseCluster } from './index';
 
 export class IntegTesting {
   readonly stack: cdk.Stack[];
@@ -23,7 +23,7 @@ export class IntegTesting {
       instanceType: new InstanceType('t3.small'),
       rdsProxy: true,
       instanceCapacity: 1,
-    })
+    });
 
     // the ServerlessLaravel
     new ServerlessLaravel(stack, 'ServerlessLaravel', {
@@ -35,11 +35,11 @@ export class IntegTesting {
       },
     });
 
-    new cdk.CfnOutput(stack, 'RDSProxyEndpoint', { value: db.rdsProxy!.endpoint })
-    new cdk.CfnOutput(stack, 'DBMasterUser', { value: db.masterUser })
-    new cdk.CfnOutput(stack, 'DBMasterPasswordSecret', { value: db.masterPassword.secretArn })
-    
-    this.stack = [ stack ]
+    new cdk.CfnOutput(stack, 'RDSProxyEndpoint', { value: db.rdsProxy!.endpoint });
+    new cdk.CfnOutput(stack, 'DBMasterUser', { value: db.masterUser });
+    new cdk.CfnOutput(stack, 'DBMasterPasswordSecret', { value: db.masterPassword.secretArn });
+
+    this.stack = [stack];
   }
 }
 
