@@ -239,7 +239,7 @@ export class DatabaseCluster extends cdk.Construct {
         instanceType: props.instanceType ?? new InstanceType('t3.medium'),
         securityGroups: [dbConnectionGroup],
       },
-      masterUser: {
+      credentials: {
         username: masterUserSecret.secretValueFromJson('username').toString(),
         password: masterUserSecret.secretValueFromJson('password'),
       },
