@@ -60,4 +60,3 @@ yarn-error.log
 !/test
 !/.eslintrc.json
 !/API.md
-!/.github/workflows/projenyarnupgrade.yml

@@ -54,15 +54,15 @@ const project = new AwsCdkConstructLibrary({
 });
 
 
-// create a custom projen and yarn upgrade workflow
-const workflow = new GithubWorkflow(project, 'ProjenYarnUpgrade');
+// // create a custom projen and yarn upgrade workflow
+// const workflow = new GithubWorkflow(project, 'ProjenYarnUpgrade');
 
-workflow.on({
-  schedule: [{
-    cron: '0 6 * * *'
-  }], // 6am every day
-  workflow_dispatch: {}, // allow manual triggering
-});
+// workflow.on({
+//   schedule: [{
+//     cron: '0 6 * * *'
+//   }], // 6am every day
+//   workflow_dispatch: {}, // allow manual triggering
+// });
 
 // workflow.addJobs({
 //   upgrade: {
