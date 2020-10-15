@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: automerge
         uses: pascalgn/automerge-action@a6eda95
-        if: github.event.pull_request.user.login == 'github-actions[bot]' && contains(github.event.pull_request.labels.*.name, 'auto-merge')
+        if: contains(github.event.pull_request.labels.*.name, 'auto-merge')
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "auto-merge,!work in progress"

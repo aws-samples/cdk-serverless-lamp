@@ -7,7 +7,7 @@ const {
 const AWS_CDK_LATEST_RELEASE = '1.62.0';
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
-const AUTOMATION_TOKEN = 'AUTOMATION_GITHUB_TOKEN';
+const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
 
 const project = new AwsCdkConstructLibrary({
@@ -33,7 +33,7 @@ const project = new AwsCdkConstructLibrary({
   },
 
   // creates PRs for projen upgrades
-  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
+  projenUpgradeSecret: AUTOMATION_TOKEN,
 
   cdkVersion: AWS_CDK_LATEST_RELEASE,
   cdkDependencies: [
