@@ -12,16 +12,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.17.0
-      - run: yarn install --frozen-lockfile
-      - run: yarn projen
-      - name: Anti-tamper check
-        run: git diff --exit-code
       - run: yarn upgrade
       - run: yarn projen:upgrade
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.PROJEN_GITHUB_TOKEN}}
+          token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
           push-to-fork: cdk-automation/cdk-serverless-lamp
           commit-message: "chore: upgrade projen"
           branch: auto/projen-upgrade
