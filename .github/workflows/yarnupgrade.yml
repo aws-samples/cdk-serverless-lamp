@@ -23,6 +23,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          push-to-fork: cdk-automation/cdk-serverless-lamp
           commit-message: "chore: yarn upgradae"
           branch: auto/yarn-upgrade
           title: "chore: yarn upgrade"
