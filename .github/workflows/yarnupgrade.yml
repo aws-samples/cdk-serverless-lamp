@@ -28,5 +28,6 @@ jobs:
           branch: auto/yarn-upgrade
           title: "chore: yarn upgrade"
           body: This PR runs the yarn upgrade
+          labels: auto-merge
     container:
       image: jsii/superchain
