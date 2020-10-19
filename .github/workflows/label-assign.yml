@@ -36,6 +36,6 @@ jobs:
           title-or-body: "title"
           parameters: >
             [
-            {"keywords":["upgrade"],"labels":["auto-merge"],"assignees":["pahud"]}
+            {"keywords":["upgrade"],"labels":["auto-merge"],"assignees":["pahud"], "token": "${{ secrets.PROJEN_GITHUB_TOKEN }}"}
             ]
           
