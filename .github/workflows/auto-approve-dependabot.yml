@@ -24,5 +24,5 @@ jobs:
     - uses: hmarr/auto-approve-action@7782c7e2bdf62b4d79bdcded8332808fd2f179cd
       if: github.event.pull_request.user.login == 'cdk-automation' || github.event.pull_request.user.login == 'dependabot[bot]' || github.event.pull_request.user.login == 'dependabot-preview[bot]'
       with:
-        github-token: "${{ secrets.GITHUB_TOKEN }}"
+        github-token: "${{ secrets.PROJEN_GITHUB_TOKEN }}"
 
