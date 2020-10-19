@@ -27,3 +27,5 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "auto-merge,!work in progress"
+          MERGE_RETRY_SLEEP: 10000
+          MERGE_RETRIES: 30
