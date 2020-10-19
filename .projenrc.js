@@ -85,7 +85,6 @@ workflow.addJobs({
         uses: 'peter-evans/create-pull-request@v3',
         with: {
           'token': '${{ secrets.' + AUTOMATION_TOKEN + ' }}',
-          'push-to-fork': 'cdk-automation/cdk-serverless-lamp',
           'commit-message': 'chore: upgrade projen',
           'branch': 'auto/projen-upgrade',
           'title': 'chore: upgrade projen and yarn',
