@@ -1703,9 +1703,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.0.4:
-  version "3.0.22"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.0.22.tgz#d2565985a2e3e2142c57d2673844fd6c3e27c54d"
-  integrity sha512-PuQVuCM7I2Y6rYsMsip+rTvwpgo8FXMQX4JNzbIL4dvG96Kqmhmb5qt6zI730LB1OlKGAe/r92xqgExUkGQo4w==
+  version "3.0.23"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.0.23.tgz#4cc5509a146eb1677d5676e48fae1fb41d9fc77b"
+  integrity sha512-B5S7HJIraedobqsmJlk7RJspvAWU+qV0VK1Rr5C0vi6lR/TAaGwm/j2+ZUUsNhMiik6oD50NpbNOGViWvK4O1Q==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -3927,9 +3927,9 @@ jsii-diff@^1.11.0:
     yargs "^16.0.3"
 
 jsii-docgen@^1.3.2:
-  version "1.4.60"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.4.60.tgz#e2a435c9b7ce5cda7580df407e3e9de049b19524"
-  integrity sha512-7dopPPfOHHsXnRM29LsmDFKiauJAOcfTcjl/RciR+nbujdgjERD8lHuI0hPUqNXk46OoWLN9iWOncNVsV7DjTQ==
+  version "1.4.61"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.4.61.tgz#ab23ed8f91714bb7c21950bbbb1579d4fa3184fb"
+  integrity sha512-tpqpWFLYNnrzuNtc4wx3Ak3ottnx7hqBFQzJC0aN8um7wSCBeajFa3wOjtVrpNbUPYJU2Yf/87pQ6RS9xH1HiQ==
   dependencies:
     "@jsii/spec" "^1.9.0"
     fs-extra "^9.0.0"
@@ -6115,9 +6115,9 @@ typescript@^3.9.5, typescript@~3.9.7:
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
 uglify-js@^3.1.4:
-  version "3.11.2"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.11.2.tgz#9f50325544273c27b20e586def140e7726c525ea"
-  integrity sha512-G440NU6fewtnQftSgqRV1r2A5ChKbU1gqFCJ7I8S7MPpY/eZZfLGefaY6gUZYiWebMaO+txgiQ1ZyLDuNWJulg==
+  version "3.11.3"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.11.3.tgz#b2f8c87826344f091ba48c417c499d6cba5d5786"
+  integrity sha512-wDRziHG94mNj2n3R864CvYw/+pc9y/RNImiTyrrf8BzgWn75JgFSwYvXrtZQMnMnOp/4UTrf3iCSQxSStPiByA==
 
 union-value@^1.0.0:
   version "1.0.1"
