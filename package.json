@@ -49,7 +49,7 @@
     "jsii-pacmak": "^1.11.0",
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
-    "projen": "^0.3.162",
+    "projen": "^0.3.164",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
@@ -63,7 +63,7 @@
     "@aws-cdk/aws-rds": "^1.62.0",
     "@aws-cdk/aws-secretsmanager": "^1.62.0",
     "@aws-cdk/core": "^1.62.0",
-    "constructs": "^3.0.4"
+    "constructs": "^3.2.0"
   },
   "dependencies": {
     "@aws-cdk/aws-apigateway": "^1.62.0",
