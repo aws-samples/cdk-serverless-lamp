@@ -1,6 +1,7 @@
 
 import * as path from 'path';
 import * as apigateway from '@aws-cdk/aws-apigatewayv2';
+import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
 import { IVpc, InstanceType, SecurityGroup, Port } from '@aws-cdk/aws-ec2';
 import * as iam from '@aws-cdk/aws-iam';
 import * as lambda from '@aws-cdk/aws-lambda';
@@ -115,7 +116,7 @@ export class ServerlessApi extends cdk.Construct {
     }
 
     const endpoint = new apigateway.HttpApi(this, 'apiservice', {
-      defaultIntegration: new apigateway.LambdaProxyIntegration({
+      defaultIntegration: new LambdaProxyIntegration({
         handler: this.handler,
       }),
     });
