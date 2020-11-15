@@ -4,7 +4,7 @@ const {
   GithubWorkflow,
 } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.62.0';
+const AWS_CDK_LATEST_RELEASE = '1.73.0';
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
@@ -40,6 +40,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/core',
     '@aws-cdk/aws-apigateway',
     '@aws-cdk/aws-apigatewayv2',
+    '@aws-cdk/aws-apigatewayv2-integrations',
     '@aws-cdk/aws-ec2',
     '@aws-cdk/aws-iam',
     '@aws-cdk/aws-lambda',
