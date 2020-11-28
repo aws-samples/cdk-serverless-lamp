@@ -1,7 +1,5 @@
 const {
-  ConstructLibraryAws,
   AwsCdkConstructLibrary,
-  GithubWorkflow,
 } = require('projen');
 
 const AWS_CDK_LATEST_RELEASE = '1.73.0';
@@ -56,7 +54,7 @@ const project = new AwsCdkConstructLibrary({
 
 
 // create a custom projen and yarn upgrade workflow
-const workflow = new GithubWorkflow(project, 'ProjenYarnUpgrade');
+const workflow = project.github.addWorkflow('ProjenYarnUpgrade');
 
 workflow.on({
   schedule: [{
