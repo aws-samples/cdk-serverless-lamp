@@ -5035,10 +5035,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.5.4.tgz#a8d3a02d693fa407f9d3ea54d628c71fe19633ff"
-  integrity sha512-00cRE+2uhFoqQpLPdEfOGukrxfuAlwZCfwe7LCKwTkRq3TkjIHlLOTjLKbAS8XhfZF1YBFaupBEMtz3zmD1tBw==
+projen@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.5.5.tgz#694a591385b0b3de0d4c425560bd8f7a6f2df0e5"
+  integrity sha512-n+nJMNNlN44Xfazn4jeSBIZG1etVwECtD2b2/j21hjZD7Z/QjEZgxe6+t3QgFYYxQ1jEz8Mz1PAKPytXEXN6dQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
@@ -5673,9 +5673,9 @@ spdx-expression-parse@^3.0.0:
     spdx-license-ids "^3.0.0"
 
 spdx-license-ids@^3.0.0:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.6.tgz#c80757383c28abf7296744998cbc106ae8b854ce"
-  integrity sha512-+orQK83kyMva3WyPf59k1+Y525csj5JejicWut55zeTWANuN17qSiSLUXWtzHeNWORSvT7GLDJ/E/XiIWoXBTw==
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.7.tgz#e9c18a410e5ed7e12442a549fbd8afa767038d65"
+  integrity sha512-U+MTEOO0AiDzxwFvoa4JVnMV6mZlJKk2sBLt90s7G0Gd0Mlknc7kxEn3nuDPNZRta7O2uy8oLcZLVT+4sqNZHQ==
 
 spdx-license-list@^6.3.0:
   version "6.3.0"
