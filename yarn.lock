@@ -1763,9 +1763,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.2.71"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.71.tgz#95edd44a1283ca00b0775ff0f047abe6982e1b9b"
-  integrity sha512-CzlWoAYSvPAdNnjj467UtOXkSqQjvBnlhsqmQ8j+oPV/V/MJW8bH1bknUGYf+yw0J9MOC0iNt6FA8YLlepV54Q==
+  version "3.2.72"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.72.tgz#83d6f45bf319f7d4df82ed56e762cacdc39cd2ae"
+  integrity sha512-V6+0NauE0ReDPlb/984VCaUVA+ANkNIRo1Z6MPEzto5lpWvxaxfcd/mUjeK3kJyGZJ0ynEZNEoI6Esk/PhSrbw==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -5068,10 +5068,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.6.12:
-  version "0.6.12"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.6.12.tgz#cbcbfcd50e7e50bd91961da820d0de53f4d95acb"
-  integrity sha512-4/c+xf7Hsjo0hFi1wpg2MB3RkH7d2F/Ht4gTcjVNgprjU+mr5Wh6FA0HlUjQ1m6HfMvd9R1IG0jyTllWppBwJw==
+projen@^0.6.13:
+  version "0.6.13"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.6.13.tgz#e0d58ab6fdf6f4e1d680cbba20f9cdda373e5f41"
+  integrity sha512-Uw3/WlvgzWkan2RflVUMO54B0LcW/ewb6rNkwBiDKPS3FMt0YRvanXp3j37XcJmhJUEdRYC0kR0EJiWRianncQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
@@ -6237,9 +6237,9 @@ typescript@^3.9.5, typescript@~3.9.7:
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
 uglify-js@^3.1.4:
-  version "3.12.1"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.12.1.tgz#78307f539f7b9ca5557babb186ea78ad30cc0375"
-  integrity sha512-o8lHP20KjIiQe5b/67Rh68xEGRrc2SRsCuuoYclXXoC74AfSRGblU1HKzJWH3HxPZ+Ort85fWHpSX7KwBUC9CQ==
+  version "3.12.2"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.12.2.tgz#c7ae89da0ed1bb58999c7fce07190b347fdbdaba"
+  integrity sha512-rWYleAvfJPjduYCt+ELvzybNah/zIkRteGXIBO8X0lteRZPGladF61hFi8tU7qKTsF7u6DUQCtT9k00VlFOgkg==
 
 union-value@^1.0.0:
   version "1.0.1"
