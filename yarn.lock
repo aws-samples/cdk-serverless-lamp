@@ -1804,9 +1804,9 @@ concat-stream@^2.0.0:
     typedarray "^0.0.6"
 
 constructs@^3.2.0:
-  version "3.2.73"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.73.tgz#bd6aefbc9b755802864114e6efd6c50638ddc82b"
-  integrity sha512-ZRPP4p5EGFfTqHZByPNeO62PArFMG59xoDFOZNRcTgYZIkG6dRxVGlwGDABOFNjhxiqQYQMv7/J3YxpmOEPIvA==
+  version "3.2.74"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.74.tgz#e5650eed2451ca264178a6798c343e3b63fa14fe"
+  integrity sha512-kINDYW5Xnv/FY+4fbg3G34jvS/kfZ0Th2j/nPPG08peUkXExkY6CB/tarmYmkLIsHGI25x83pQHGDoFl7L8JLA==
 
 contains-path@^0.1.0:
   version "0.1.0"
@@ -2889,9 +2889,9 @@ get-caller-file@^2.0.1, get-caller-file@^2.0.5:
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
 
 get-intrinsic@^1.0.0, get-intrinsic@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.0.1.tgz#94a9768fcbdd0595a1c9273aacf4c89d075631be"
-  integrity sha512-ZnWP+AmS1VUaLgTRy47+zKtjTxz+0xMpx3I52i+aalBK1QP19ggLF3Db89KJX7kjfOfP2eoa01qc++GwPgufPg==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.0.2.tgz#6820da226e50b24894e08859469dc68361545d49"
+  integrity sha512-aeX0vrFm21ILl3+JpFFRNe9aUvp6VFZb2/CTbgLb8j75kOhvoNYjt9d8KA/tJG4gSo8nzEDedRl0h7vDmBYRVg==
   dependencies:
     function-bind "^1.1.1"
     has "^1.0.3"
@@ -4059,9 +4059,9 @@ jsii-diff@^1.11.0:
     yargs "^16.1.1"
 
 jsii-docgen@^1.3.2:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.5.3.tgz#654072e2835adc4520ac741c41f2b5e2bb6baadf"
-  integrity sha512-AnDxMQwBCjK23ISZqXf4JmRFNODTprcB6qfwUrCaPwBblfOCFEo6xpZROtuGdeZRmu+RmlcYlywSyWQQFdj0PA==
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.5.4.tgz#a3991313e2978155e81ea88e8fdf4a86dbf999a8"
+  integrity sha512-RJvZtysQPy/xm6MIDMKioD/CQ6OmtjgQfoRSxOARIiplOfLt9OuuoOmJBzYCNZPLXdH+2WTSKEts8fgFvU1ywg==
   dependencies:
     "@jsii/spec" "^1.9.0"
     fs-extra "^9.0.0"
