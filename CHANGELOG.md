@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.43](https://github.com/aws-samples/cdk-serverless-lamp/compare/v1.4.41...v1.4.43) (2021-02-02)
+
+
+### Bug Fixes
+
+* **core:** LambdaProxyIntegration ([501b7b3](https://github.com/aws-samples/cdk-serverless-lamp/commit/501b7b34307595b799ce9f541f2fb7879ff12f2c))
+
 ### 1.4.42 (2020-11-28)
 
 ### 1.4.41 (2020-10-19)
