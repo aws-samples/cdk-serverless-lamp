@@ -167,6 +167,9 @@ Object {
     "DatabaseClusterDBClusterRDSProxyProxyTargetGroupDDD325EB": Object {
       "DependsOn": Array [
         "DatabaseClusterDBClusterInstance11F5999A0",
+        "DatabaseClusterDBClusterRDSProxyB1CC2CD9",
+        "DatabaseClusterDBCluster27F7FF5A",
+        "DatabaseClusterDBClusterSubnets4D07688F",
       ],
       "Properties": Object {
         "ConnectionPoolConfigurationInfo": Object {},
@@ -308,22 +311,6 @@ Object {
       },
       "Type": "AWS::ApiGatewayV2::Api",
     },
-    "ServerlessLaravelapiserviceDefaultRouteDefaultRouteIntegrationA64B2C0B": Object {
-      "Properties": Object {
-        "ApiId": Object {
-          "Ref": "ServerlessLaravelapiservice4065BAA9",
-        },
-        "IntegrationType": "AWS_PROXY",
-        "IntegrationUri": Object {
-          "Fn::GetAtt": Array [
-            "ServerlessLaravelhandler0B420B12",
-            "Arn",
-          ],
-        },
-        "PayloadFormatVersion": "2.0",
-      },
-      "Type": "AWS::ApiGatewayV2::Integration",
-    },
     "ServerlessLaravelapiserviceDefaultRouteEE61294B": Object {
       "Properties": Object {
         "ApiId": Object {
@@ -336,7 +323,7 @@ Object {
             Array [
               "integrations/",
               Object {
-                "Ref": "ServerlessLaravelapiserviceDefaultRouteDefaultRouteIntegrationA64B2C0B",
+                "Ref": "ServerlessLaravelapiserviceHttpIntegration9abee9c748686c3cb50739d6aaca4b539ECEA44D",
               },
             ],
           ],
@@ -390,6 +377,22 @@ Object {
         "StageName": "$default",
       },
       "Type": "AWS::ApiGatewayV2::Stage",
+    },
+    "ServerlessLaravelapiserviceHttpIntegration9abee9c748686c3cb50739d6aaca4b539ECEA44D": Object {
+      "Properties": Object {
+        "ApiId": Object {
+          "Ref": "ServerlessLaravelapiservice4065BAA9",
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": Object {
+          "Fn::GetAtt": Array [
+            "ServerlessLaravelhandler0B420B12",
+            "Arn",
+          ],
+        },
+        "PayloadFormatVersion": "2.0",
+      },
+      "Type": "AWS::ApiGatewayV2::Integration",
     },
     "ServerlessLaravelhandler0B420B12": Object {
       "DependsOn": Array [
