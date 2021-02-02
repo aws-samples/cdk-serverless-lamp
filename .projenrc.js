@@ -9,11 +9,11 @@ const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
 
 const project = new AwsCdkConstructLibrary({
-  authorName: "Pahud Hsieh",
-  authorEmail: "hunhsieh@amazon.com",
+  authorName: 'Pahud Hsieh',
+  authorEmail: 'hunhsieh@amazon.com',
   name: PROJECT_NAME,
   description: PROJECT_DESCRIPTION,
-  repository: "https://github.com/aws-samples/cdk-serverless-lamp.git",
+  repository: 'https://github.com/aws-samples/cdk-serverless-lamp.git',
   dependabot: false,
   // upgrade every Sunday 6AM
   projenUpgradeSchedule: ['0 6 * * 0'],
@@ -22,12 +22,12 @@ const project = new AwsCdkConstructLibrary({
   keywords: [
     'aws',
     'serverless',
-    'lamp'
+    'lamp',
   ],
 
   catalog: {
     twitter: 'pahudnet',
-    announce: false
+    announce: false,
   },
 
   // creates PRs for projen upgrades
@@ -48,8 +48,8 @@ const project = new AwsCdkConstructLibrary({
 
   python: {
     distName: 'cdk-serverless-lamp',
-    module: 'cdk_serverless_lamp'
-  }
+    module: 'cdk_serverless_lamp',
+  },
 });
 
 
@@ -58,7 +58,7 @@ const workflow = project.github.addWorkflow('ProjenYarnUpgrade');
 
 workflow.on({
   schedule: [{
-    cron: '11 0 * * *'
+    cron: '11 0 * * *',
   }], // 0:11am every day
   workflow_dispatch: {}, // allow manual triggering
 });
@@ -68,14 +68,14 @@ workflow.addJobs({
     'runs-on': 'ubuntu-latest',
     'steps': [
       { uses: 'actions/checkout@v2' },
-      { 
+      {
         uses: 'actions/setup-node@v1',
         with: {
           'node-version': '10.17.0',
-        }
+        },
       },
-      { run: `yarn upgrade` },
-      { run: `yarn projen:upgrade` },
+      { run: 'yarn upgrade' },
+      { run: 'yarn projen:upgrade' },
       // submit a PR
       {
         name: 'Create Pull Request',
@@ -87,7 +87,7 @@ workflow.addJobs({
           'title': 'chore: upgrade projen and yarn',
           'body': 'This PR upgrades projen and yarn upgrade to the latest version',
           'labels': 'auto-merge',
-        }
+        },
       },
     ],
   },
