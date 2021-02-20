@@ -14,7 +14,7 @@ const project = new AwsCdkConstructLibrary({
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/aws-samples/cdk-serverless-lamp.git',
   dependabot: false,
-  defaultReleaseBranch: ['master'],
+  defaultReleaseBranch: 'master',
   keywords: [
     'aws',
     'serverless',
