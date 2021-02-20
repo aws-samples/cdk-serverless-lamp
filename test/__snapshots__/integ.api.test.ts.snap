@@ -236,6 +236,37 @@ Object {
       },
       "Type": "AWS::EC2::SecurityGroupIngress",
     },
+    "DatabaseClusterDBSecuirtyGroupfromtestingstackDatabaseClusterDBSecuirtyGroup86BFF478IndirectPortBFC34999": Object {
+      "Properties": Object {
+        "Description": "Allow connections to the database Cluster from the Proxy",
+        "FromPort": Object {
+          "Fn::GetAtt": Array [
+            "DatabaseClusterDBCluster27F7FF5A",
+            "Endpoint.Port",
+          ],
+        },
+        "GroupId": Object {
+          "Fn::GetAtt": Array [
+            "DatabaseClusterDBSecuirtyGroup4BD8146E",
+            "GroupId",
+          ],
+        },
+        "IpProtocol": "tcp",
+        "SourceSecurityGroupId": Object {
+          "Fn::GetAtt": Array [
+            "DatabaseClusterDBSecuirtyGroup4BD8146E",
+            "GroupId",
+          ],
+        },
+        "ToPort": Object {
+          "Fn::GetAtt": Array [
+            "DatabaseClusterDBCluster27F7FF5A",
+            "Endpoint.Port",
+          ],
+        },
+      },
+      "Type": "AWS::EC2::SecurityGroupIngress",
+    },
     "DatabaseClusterDbMasterSecret98DF2329": Object {
       "Properties": Object {
         "GenerateSecretString": Object {
@@ -316,6 +347,7 @@ Object {
         "ApiId": Object {
           "Ref": "ServerlessLaravelapiservice4065BAA9",
         },
+        "AuthorizationScopes": Array [],
         "RouteKey": "$default",
         "Target": Object {
           "Fn::Join": Array [
@@ -323,13 +355,29 @@ Object {
             Array [
               "integrations/",
               Object {
-                "Ref": "ServerlessLaravelapiserviceHttpIntegration9abee9c748686c3cb50739d6aaca4b539ECEA44D",
+                "Ref": "ServerlessLaravelapiserviceDefaultRouteHttpIntegration0aa26f0c101999c01591540c314ca93867D6CF29",
               },
             ],
           ],
         },
       },
       "Type": "AWS::ApiGatewayV2::Route",
+    },
+    "ServerlessLaravelapiserviceDefaultRouteHttpIntegration0aa26f0c101999c01591540c314ca93867D6CF29": Object {
+      "Properties": Object {
+        "ApiId": Object {
+          "Ref": "ServerlessLaravelapiservice4065BAA9",
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": Object {
+          "Fn::GetAtt": Array [
+            "ServerlessLaravelhandler0B420B12",
+            "Arn",
+          ],
+        },
+        "PayloadFormatVersion": "2.0",
+      },
+      "Type": "AWS::ApiGatewayV2::Integration",
     },
     "ServerlessLaravelapiserviceDefaultRoutetestingstackServerlessLaravelapiserviceDefaultRoute7A8DF8B3PermissionACAF5659": Object {
       "Properties": Object {
@@ -377,22 +425,6 @@ Object {
         "StageName": "$default",
       },
       "Type": "AWS::ApiGatewayV2::Stage",
-    },
-    "ServerlessLaravelapiserviceHttpIntegration9abee9c748686c3cb50739d6aaca4b539ECEA44D": Object {
-      "Properties": Object {
-        "ApiId": Object {
-          "Ref": "ServerlessLaravelapiservice4065BAA9",
-        },
-        "IntegrationType": "AWS_PROXY",
-        "IntegrationUri": Object {
-          "Fn::GetAtt": Array [
-            "ServerlessLaravelhandler0B420B12",
-            "Arn",
-          ],
-        },
-        "PayloadFormatVersion": "2.0",
-      },
-      "Type": "AWS::ApiGatewayV2::Integration",
     },
     "ServerlessLaravelhandler0B420B12": Object {
       "DependsOn": Array [
