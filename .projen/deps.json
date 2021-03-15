@@ -69,7 +69,11 @@
     },
     {
       "name": "projen",
+<<<<<<< HEAD
       "version": "^0.16.42",
+=======
+      "version": "^0.17.1",
+>>>>>>> 66881e060b01fbe3e2a58bee0669c7dbb57897e1
       "type": "build"
     },
     {
@@ -83,10 +87,13 @@
     },
     {
       "name": "typescript",
+<<<<<<< HEAD
       "type": "build"
     },
     {
       "name": "xmldom",
+=======
+>>>>>>> 66881e060b01fbe3e2a58bee0669c7dbb57897e1
       "type": "build"
     },
     {
