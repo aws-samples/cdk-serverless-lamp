@@ -36,7 +36,9 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-secretsmanager',
     '@aws-cdk/aws-rds',
   ],
-
+  devDeps: [
+    'xmldom',
+  ],
   python: {
     distName: 'cdk-serverless-lamp',
     module: 'cdk_serverless_lamp',
