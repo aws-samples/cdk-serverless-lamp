@@ -39,7 +39,6 @@ yarn-error.log*
 !/.github/workflows/build.yml
 !/.github/workflows/projenyarnupgrade.yml
 !/.github/workflows/projenyarnupgradeupdatetest.yml
-!/.github/workflows/rebuild-bot.yml
 !/.github/workflows/release.yml
 !/.mergify.yml
 !/.npmignore
