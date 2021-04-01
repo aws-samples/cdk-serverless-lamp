@@ -68,6 +68,10 @@
       "type": "build"
     },
     {
+      "name": "projen-automate-it",
+      "type": "build"
+    },
+    {
       "name": "projen",
       "version": "^0.17.20",
       "type": "build"
@@ -83,10 +87,6 @@
     },
     {
       "name": "typescript",
-      "type": "build"
-    },
-    {
-      "name": "xmldom",
       "type": "build"
     },
     {
