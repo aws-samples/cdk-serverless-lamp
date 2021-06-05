@@ -1,5 +1,4 @@
 const { AwsCdkConstructLibrary } = require('projen');
-const { Automation } = require('projen-automate-it');
 
 const AWS_CDK_LATEST_RELEASE = '1.73.0';
 const PROJECT_NAME = 'cdk-serverless-lamp';
@@ -15,6 +14,9 @@ const project = new AwsCdkConstructLibrary({
   dependabot: false,
   defaultReleaseBranch: 'main',
   devDeps: ['projen-automate-it'],
+  autoApproveOptions: {
+    secret: AUTOMATION_TOKEN,
+  },
   keywords: [
     'aws',
     'serverless',
@@ -41,12 +43,6 @@ const project = new AwsCdkConstructLibrary({
     module: 'cdk_serverless_lamp',
   },
 });
-
-const automation = new Automation(project, {
-  automationToken: AUTOMATION_TOKEN,
-});
-
-automation.projenYarnUpgrade();
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'docker-compose.yml', 'images', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude, '/codebase');
