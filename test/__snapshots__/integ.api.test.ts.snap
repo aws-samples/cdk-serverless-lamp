@@ -347,7 +347,7 @@ Object {
         "ApiId": Object {
           "Ref": "ServerlessLaravelapiservice4065BAA9",
         },
-        "AuthorizationScopes": Array [],
+        "AuthorizationType": "NONE",
         "RouteKey": "$default",
         "Target": Object {
           "Fn::Join": Array [
