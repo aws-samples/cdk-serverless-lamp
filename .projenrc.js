@@ -1,4 +1,4 @@
-const { AwsCdkConstructLibrary } = require('projen');
+const { AwsCdkConstructLibrary, DependenciesUpgradeMechanism } = require('projen');
 
 const AWS_CDK_LATEST_RELEASE = '1.73.0';
 const PROJECT_NAME = 'cdk-serverless-lamp';
@@ -11,11 +11,16 @@ const project = new AwsCdkConstructLibrary({
   name: PROJECT_NAME,
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/aws-samples/cdk-serverless-lamp.git',
-  dependabot: false,
   defaultReleaseBranch: 'main',
-  devDeps: ['projen-automate-it'],
+  depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
+    workflowOptions: {
+      labels: ['auto-approve', 'auto-merge'],
+      secret: AUTOMATION_TOKEN,
+    },
+  }),
   autoApproveOptions: {
-    secret: AUTOMATION_TOKEN,
+    secret: 'GITHUB_TOKEN',
+    allowedUsernames: ['pahud'],
   },
   keywords: [
     'aws',
