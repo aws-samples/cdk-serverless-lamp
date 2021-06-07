@@ -1404,9 +1404,9 @@ ajv@^6.10.0, ajv@^6.12.3, ajv@^6.12.4:
     uri-js "^4.2.2"
 
 ajv@^8.0.1:
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.5.0.tgz#695528274bcb5afc865446aa275484049a18ae4b"
-  integrity sha512-Y2l399Tt1AguU3BPRP9Fn4eN+Or+StUGWCUpbnFyXSo8NZ9S4uj+AG2pjs5apK+ZMOwYOz1+a+VKvKH7CudXgQ==
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.6.0.tgz#60cc45d9c46a477d80d92c48076d972c342e5720"
+  integrity sha512-cnUG4NSBiM4YFBxgZIj/In3/6KX+rQ2l2YPRVcvAMQGWEPKuXoPIhxzwqh31jA3IPbI4qEOp/5ILI4ynioXsGQ==
   dependencies:
     fast-deep-equal "^3.1.1"
     json-schema-traverse "^1.0.0"
@@ -1887,9 +1887,9 @@ camelcase@^6.0.0, camelcase@^6.2.0:
   integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
 caniuse-lite@^1.0.30001219:
-  version "1.0.30001234"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001234.tgz#8fc2e709e3b0679d7af7f073a1c661155c39b975"
-  integrity sha512-a3gjUVKkmwLdNysa1xkUAwN2VfJUJyVW47rsi3aCbkRCtbHAfo+rOsCqVw29G6coQ8gzAPb5XBXwiGHwme3isA==
+  version "1.0.30001235"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001235.tgz#ad5ca75bc5a1f7b12df79ad806d715a43a5ac4ed"
+  integrity sha512-zWEwIVqnzPkSAXOUlQnPW2oKoYb2aLQ4Q5ejdjBcnH63rfypaW34CxaeBn1VMya2XaEU3P/R2qHpWyj+l0BT1A==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -4695,9 +4695,9 @@ jsii-diff@^1.30.0:
     yargs "^16.2.0"
 
 jsii-docgen@^1.8.88:
-  version "1.8.88"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.88.tgz#b0eba7d98f20bb0aeecb4bb8dc13b00f985b3b85"
-  integrity sha512-CTW585S3G0mjRuVQBZDke2eE+E5DwDavH10LxOJbZWYT7XpDyKw+LytqwEofjPfy426Yrq3wzvKrjEL7lcoagg==
+  version "1.8.89"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.89.tgz#81f71da20161e293ef9d08de2b6a8153cbf12584"
+  integrity sha512-gb6N86ePVwGlQqZjkOzR70z0QpTh51P6/+gPGlRva5ndVIO5CzRv7qAFQhHcBgv7dTkH34qu8ncIUkMxMXCzpw==
   dependencies:
     "@jsii/spec" "^1.30.0"
     fs-extra "^9.1.0"
@@ -6080,35 +6080,10 @@ progress@^2.0.0, progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen-automate-it@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/projen-automate-it/-/projen-automate-it-0.0.9.tgz#8bcb96c8186d570b2f70135a0dc4330768616514"
-  integrity sha512-QF7Vrecp5ZlNB6HXP3m3fIerIPDaHvosgIHvquR4xfJ866YNbmkl4XCa6dIHe4M1yhIBDCRo8irLzrbAGcx22Q==
-  dependencies:
-    projen "^0.17"
-
-projen@^0.17:
-  version "0.17.95"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.17.95.tgz#c24f33a091f8dc0a3e84a694bf49164455372b45"
-  integrity sha512-PyBAYREMuR9YRs6J+DKmcbMbGBuhAtIY9TGItp+n0x0kGSk4VI+uRfE49YlyJVrhJ0FWhGqr9FFXR+YbKO1IxQ==
-  dependencies:
-    "@iarna/toml" "^2.2.5"
-    chalk "^4.1.1"
-    decamelize "^4.0.0"
-    fs-extra "^9.1.0"
-    glob "^7"
-    ini "^2.0.0"
-    inquirer "^7.3.3"
-    semver "^7.3.5"
-    shx "^0.3.3"
-    xmlbuilder2 "^2.4.1"
-    yaml "^1.10.2"
-    yargs "^16.2.0"
-
-projen@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.22.0.tgz#24c9c2fa3a87eae61361324b8ca8f868971efffb"
-  integrity sha512-5ZQ8uI4cER1PELvJwUPoAd3/4PF7TILerDEj4V7qzbCF3UaDeEb25/rbtxl/iniGCnEFe0ZI5jaqJSkEXl0TZA==
+projen@^0.22.7:
+  version "0.22.7"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.22.7.tgz#ad48dfcbbcc1815dd15b78e54a035ad1eacef9e6"
+  integrity sha512-WL6PF/aw5ZuczIxlay0Al5ePqvrX42sSLyv6aq57Q5MLBMJlMIEnnyrbLS5Ww5NdrcL/RVSLEW0Q0nseaeKe0w==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.1"
