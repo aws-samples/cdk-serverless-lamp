@@ -60,6 +60,7 @@ Object {
     "DatabaseClusterDBCluster27F7FF5A": Object {
       "DeletionPolicy": "Delete",
       "Properties": Object {
+        "CopyTagsToSnapshot": true,
         "DBClusterParameterGroupName": "default.aurora-mysql5.7",
         "DBSubnetGroupName": Object {
           "Ref": "DatabaseClusterDBClusterSubnets4D07688F",
