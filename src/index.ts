@@ -91,7 +91,7 @@ export class ServerlessApi extends cdk.Construct {
     this.vpc = props.vpc;
 
     this.handler = props.handler ?? new lambda.Function(this, 'handler', {
-      runtime: lambda.Runtime.PROVIDED,
+      runtime: lambda.Runtime.PROVIDED_AL2,
       handler: 'public/index.php',
       layers: [
         lambda.LayerVersion.fromLayerVersionArn(this, 'BrefPHPLayer', props.brefLayerVersion),
