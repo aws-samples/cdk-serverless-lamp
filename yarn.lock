@@ -2165,9 +2165,9 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^3.3.69:
-  version "3.3.112"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.112.tgz#31d6f73eb75d7c8aa8b12cde8b7117dd950bfabe"
-  integrity sha512-q+3xcqGemb3WEuijxUNQfwXmr8lgkNlwNLWEgB7cukUYNARkLIY5Nacz/8F/CCM91UEwMAqiCee4LCdcD4Dgrw==
+  version "3.3.113"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.113.tgz#6bbcb9509bbdba0f8da5b9a79967cf88a053caf6"
+  integrity sha512-dy8Nhvihh+rmCr9+Z6omfaaknVwFUIUOkC5zKLc/CyNoVXNc8yvQC6395fQ/t25u42cFGTXedxBkTUx1dwf4uQ==
 
 conventional-changelog-angular@^5.0.12:
   version "5.0.12"
@@ -7010,7 +7010,7 @@ tr46@^2.1.0:
   dependencies:
     punycode "^2.1.1"
 
-trim-newlines@3.0.1, trim-newlines@^3.0.0:
+trim-newlines@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.1.tgz#260a5d962d8b752425b32f3a7db0dcacd176c144"
   integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
@@ -7504,10 +7504,9 @@ xmlchars@^2.2.0:
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
 
-xmldom@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.6.0.tgz#43a96ecb8beece991cef382c08397d82d4d0c46f"
-  integrity sha512-iAcin401y58LckRZ0TkI4k0VSM1Qg0KGSc3i8rU+xrxe19A/BN1zHyVSJY7uoutVlaTSzYyk/v5AmkewAP7jtg==
+xmldom@^0.6.0, "xmldom@github:xmldom/xmldom#0.7.0":
+  version "0.7.0"
+  resolved "https://codeload.github.com/xmldom/xmldom/tar.gz/c568938641cc1f121cef5b4df80fcfda1e489b6e"
 
 xtend@~4.0.1:
   version "4.0.2"
