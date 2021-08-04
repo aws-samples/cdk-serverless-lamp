@@ -498,7 +498,7 @@ Object {
             "Arn",
           ],
         },
-        "Runtime": "provided",
+        "Runtime": "provided.al2",
         "Timeout": 120,
         "VpcConfig": Object {
           "SecurityGroupIds": Array [
