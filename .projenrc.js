@@ -51,7 +51,7 @@ const project = new AwsCdkConstructLibrary({
 });
 
 project.package.addField('resolutions', {
-  'xmldom': 'github:xmldom/xmldom#0.7.0'
+  xmldom: 'github:xmldom/xmldom#0.7.0',
 });
 
 
