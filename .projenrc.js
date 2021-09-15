@@ -33,6 +33,7 @@ const project = new AwsCdkConstructLibrary({
     announce: false,
   },
   cdkVersion: AWS_CDK_LATEST_RELEASE,
+  minNodeVersion: '14.17.0',
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-apigateway',
@@ -51,9 +52,8 @@ const project = new AwsCdkConstructLibrary({
 });
 
 project.package.addField('resolutions', {
-  xmldom: 'github:xmldom/xmldom#0.7.0',
+  'set-value': '^4.0.1',
 });
-
 
 const common_exclude = ['cdk.out', 'cdk.context.json', 'docker-compose.yml', 'images', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude, '/codebase');
