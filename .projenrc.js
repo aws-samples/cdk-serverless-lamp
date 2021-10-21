@@ -1,4 +1,4 @@
-const { AwsCdkConstructLibrary, DependenciesUpgradeMechanism, DevEnvironmentDockerImage, Gitpod } = require('projen');
+const { AwsCdkConstructLibrary, DevEnvironmentDockerImage, Gitpod } = require('projen');
 
 const AWS_CDK_LATEST_RELEASE = '1.73.0';
 const PROJECT_NAME = 'cdk-serverless-lamp';
@@ -12,13 +12,13 @@ const project = new AwsCdkConstructLibrary({
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/aws-samples/cdk-serverless-lamp.git',
   defaultReleaseBranch: 'main',
-  depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
+  depsUpgradeOptions: {
     ignoreProjen: false,
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
       secret: AUTOMATION_TOKEN,
     },
-  }),
+  },
   autoApproveOptions: {
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['pahud'],
@@ -33,7 +33,6 @@ const project = new AwsCdkConstructLibrary({
     announce: false,
   },
   cdkVersion: AWS_CDK_LATEST_RELEASE,
-  minNodeVersion: '14.17.0',
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-apigateway',
