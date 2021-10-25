@@ -2334,9 +2334,9 @@ conventional-commits-filter@^2.0.7:
     modify-values "^1.0.0"
 
 conventional-commits-parser@^3.2.0:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/conventional-commits-parser/-/conventional-commits-parser-3.2.2.tgz#190fb9900c6e02be0c0bca9b03d57e24982639fd"
-  integrity sha512-Jr9KAKgqAkwXMRHjxDwO/zOCDKod1XdAESHAGuJX38iZ7ZzVti/tvVoysO0suMsdAObp9NQ2rHSsSbnAqZ5f5g==
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/conventional-commits-parser/-/conventional-commits-parser-3.2.3.tgz#fc43704698239451e3ef35fd1d8ed644f46bd86e"
+  integrity sha512-YyRDR7On9H07ICFpRm/igcdjIqebXbvf4Cff+Pf0BrBys1i1EOzx9iFXNlAbdrLAR8jf7bkUYkDAr8pEy0q4Pw==
   dependencies:
     JSONStream "^1.0.4"
     is-text-path "^1.0.1"
@@ -6020,10 +6020,10 @@ progress@^2.0.0, progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.31.9:
-  version "0.31.9"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.31.9.tgz#6c8d99b34d91c6c67cad66de5aa7b2866626a01f"
-  integrity sha512-h0B+cffcEjm5RcmISoZkyQZErVg4ClDsM8mZCwJdE/qrBjg51cDUR/JNx+VXuUQswK6b3iISzm4T3dAvhNroIg==
+projen@^0.31.11:
+  version "0.31.11"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.31.11.tgz#1a18f9488c526be3a2b2c849adaf5bbc81846636"
+  integrity sha512-4K01Cp4VVZPc2HXeER8+zxMgM9dX0VxQVrgexd6j1DZGyIzPBsc6xf0NrG265Qupa3dUIHn/nctF7kVFYKL4ZQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.2"
