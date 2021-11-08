@@ -269,6 +269,7 @@ Object {
       "Type": "AWS::EC2::SecurityGroupIngress",
     },
     "DatabaseClusterDbMasterSecret98DF2329": Object {
+      "DeletionPolicy": "Delete",
       "Properties": Object {
         "GenerateSecretString": Object {
           "ExcludePunctuation": true,
@@ -280,6 +281,7 @@ Object {
         "Name": "testing-stack-DbMasterSecret",
       },
       "Type": "AWS::SecretsManager::Secret",
+      "UpdateReplacePolicy": "Delete",
     },
     "DatabaseClusterRdsProxyRole9B27D8A3": Object {
       "Properties": Object {
