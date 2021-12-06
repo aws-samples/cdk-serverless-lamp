@@ -79,7 +79,7 @@ export interface ServerlessApiProps {
  * Use `ServerlessApi` to create the serverless API resource
  */
 export class ServerlessApi extends cdk.Construct {
-  readonly handler: lambda.IFunction
+  readonly handler: lambda.IFunction;
   readonly vpc?: IVpc;
 
   constructor(scope: cdk.Construct, id: string, props: ServerlessApiProps) {
@@ -201,7 +201,7 @@ export interface DatabaseProps {
 }
 
 export class DatabaseCluster extends cdk.Construct {
-  readonly rdsProxy?: rds.DatabaseProxy
+  readonly rdsProxy?: rds.DatabaseProxy;
   readonly masterUser: string;
   readonly masterPassword: secretsmanager.ISecret;
 
