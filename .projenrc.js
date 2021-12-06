@@ -1,18 +1,17 @@
-const { AwsCdkConstructLibrary, DevEnvironmentDockerImage, Gitpod } = require('projen');
+const { awscdk, DevEnvironmentDockerImage, Gitpod } = require('projen');
 
 const AWS_CDK_LATEST_RELEASE = '1.73.0';
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
-const project = new AwsCdkConstructLibrary({
+const project = new awscdk.AwsCdkConstructLibrary({
   authorName: 'Pahud Hsieh',
   authorEmail: 'hunhsieh@amazon.com',
   name: PROJECT_NAME,
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/aws-samples/cdk-serverless-lamp.git',
   defaultReleaseBranch: 'main',
-  minNodeVersion: '12.20.0',
   depsUpgradeOptions: {
     ignoreProjen: false,
     workflowOptions: {
