@@ -43,17 +43,10 @@ Object {
     },
   },
   "Parameters": Object {
-    "AssetParametersb7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68ArtifactHash665016D3": Object {
-      "Description": "Artifact hash for asset \\"b7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68\\"",
-      "Type": "String",
-    },
-    "AssetParametersb7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68S3Bucket67D7843A": Object {
-      "Description": "S3 bucket for asset \\"b7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68\\"",
-      "Type": "String",
-    },
-    "AssetParametersb7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68S3VersionKey07B6FF8B": Object {
-      "Description": "S3 key for asset version \\"b7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68\\"",
-      "Type": "String",
+    "BootstrapVersion": Object {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
     },
   },
   "Resources": Object {
@@ -358,7 +351,7 @@ Object {
             Array [
               "integrations/",
               Object {
-                "Ref": "ServerlessLaravelapiserviceDefaultRouteHttpIntegration0aa26f0c101999c01591540c314ca93867D6CF29",
+                "Ref": "ServerlessLaravelapiserviceDefaultRoutelambdaHandlerA4AC0A28",
               },
             ],
           ],
@@ -366,7 +359,7 @@ Object {
       },
       "Type": "AWS::ApiGatewayV2::Route",
     },
-    "ServerlessLaravelapiserviceDefaultRouteHttpIntegration0aa26f0c101999c01591540c314ca93867D6CF29": Object {
+    "ServerlessLaravelapiserviceDefaultRoutelambdaHandlerA4AC0A28": Object {
       "Properties": Object {
         "ApiId": Object {
           "Ref": "ServerlessLaravelapiservice4065BAA9",
@@ -382,7 +375,7 @@ Object {
       },
       "Type": "AWS::ApiGatewayV2::Integration",
     },
-    "ServerlessLaravelapiserviceDefaultRoutetestingstackServerlessLaravelapiserviceDefaultRoute7A8DF8B3PermissionACAF5659": Object {
+    "ServerlessLaravelapiserviceDefaultRoutelambdaHandlerPermissionF06434EA": Object {
       "Properties": Object {
         "Action": "lambda:InvokeFunction",
         "FunctionName": Object {
@@ -436,41 +429,9 @@ Object {
       "Properties": Object {
         "Code": Object {
           "S3Bucket": Object {
-            "Ref": "AssetParametersb7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68S3Bucket67D7843A",
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": Object {
-            "Fn::Join": Array [
-              "",
-              Array [
-                Object {
-                  "Fn::Select": Array [
-                    0,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParametersb7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68S3VersionKey07B6FF8B",
-                        },
-                      ],
-                    },
-                  ],
-                },
-                Object {
-                  "Fn::Select": Array [
-                    1,
-                    Object {
-                      "Fn::Split": Array [
-                        "||",
-                        Object {
-                          "Ref": "AssetParametersb7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68S3VersionKey07B6FF8B",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
+          "S3Key": "b7826d21185e020066e56b133136e1082372d08cf21209a8823ac39710782f68.zip",
         },
         "Environment": Object {
           "Variables": Object {
@@ -932,6 +893,33 @@ Object {
         },
       },
       "Type": "AWS::EC2::VPCGatewayAttachment",
+    },
+  },
+  "Rules": Object {
+    "CheckBootstrapVersion": Object {
+      "Assertions": Array [
+        Object {
+          "Assert": Object {
+            "Fn::Not": Array [
+              Object {
+                "Fn::Contains": Array [
+                  Array [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  Object {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
     },
   },
 }

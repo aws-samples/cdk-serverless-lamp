@@ -16,6 +16,7 @@
     "compile": "npx projen compile",
     "default": "npx projen default",
     "docgen": "npx projen docgen",
+    "eject": "npx projen eject",
     "eslint": "npx projen eslint",
     "gitpod:prebuild": "npx projen gitpod:prebuild",
     "package": "npx projen package",
@@ -23,6 +24,7 @@
     "package:js": "npx projen package:js",
     "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
+    "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
     "release": "npx projen release",
     "test": "npx projen test",
@@ -39,49 +41,35 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.73.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^12",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "aws-cdk-lib": "2.14.0",
+    "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.4",
     "jest": "^26.6.3",
     "jest-junit": "^13",
-    "jsii": "^1.52.0",
-    "jsii-diff": "^1.52.0",
+    "jsii": "^1.54.0",
+    "jsii-diff": "^1.54.0",
     "jsii-docgen": "^1.8.110",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
-    "projen": "^0.50.15",
+    "projen": "^0.52.48",
     "standard-version": "^9",
     "ts-jest": "^26.5.6",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-apigateway": "^1.73.0",
-    "@aws-cdk/aws-apigatewayv2": "^1.73.0",
-    "@aws-cdk/aws-apigatewayv2-integrations": "^1.73.0",
-    "@aws-cdk/aws-ec2": "^1.73.0",
-    "@aws-cdk/aws-iam": "^1.73.0",
-    "@aws-cdk/aws-lambda": "^1.73.0",
-    "@aws-cdk/aws-rds": "^1.73.0",
-    "@aws-cdk/aws-secretsmanager": "^1.73.0",
-    "@aws-cdk/core": "^1.73.0",
-    "constructs": "^3.2.27"
+    "aws-cdk-lib": "^2.14.0",
+    "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "^1.73.0",
-    "@aws-cdk/aws-apigatewayv2": "^1.73.0",
-    "@aws-cdk/aws-apigatewayv2-integrations": "^1.73.0",
-    "@aws-cdk/aws-ec2": "^1.73.0",
-    "@aws-cdk/aws-iam": "^1.73.0",
-    "@aws-cdk/aws-lambda": "^1.73.0",
-    "@aws-cdk/aws-rds": "^1.73.0",
-    "@aws-cdk/aws-secretsmanager": "^1.73.0",
-    "@aws-cdk/core": "^1.73.0"
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.14.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.14.0-alpha.0"
   },
   "keywords": [
     "aws",
@@ -103,6 +91,7 @@
       "json",
       "lcov",
       "clover",
+      "cobertura",
       "text"
     ],
     "coverageDirectory": "coverage",

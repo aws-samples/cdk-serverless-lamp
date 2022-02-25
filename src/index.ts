@@ -1,13 +1,17 @@
 
 import * as path from 'path';
-import * as apigateway from '@aws-cdk/aws-apigatewayv2';
-import { LambdaProxyIntegration } from '@aws-cdk/aws-apigatewayv2-integrations';
-import { IVpc, InstanceType, SecurityGroup, Port } from '@aws-cdk/aws-ec2';
-import * as iam from '@aws-cdk/aws-iam';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as rds from '@aws-cdk/aws-rds';
-import * as secretsmanager from '@aws-cdk/aws-secretsmanager';
-import * as cdk from '@aws-cdk/core';
+import * as apigateway from '@aws-cdk/aws-apigatewayv2-alpha';
+import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import {
+  Stack, CfnOutput, Duration, RemovalPolicy,
+  aws_ec2 as ec2,
+  aws_iam as iam,
+  aws_lambda as lambda,
+  aws_rds as rds,
+  aws_secretsmanager as secretsmanager,
+} from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+
 
 export interface DatabaseConfig {
   /**
@@ -59,7 +63,7 @@ export interface ServerlessApiProps {
   /**
    * The VPC for this stack
    */
-  readonly vpc?: IVpc;
+  readonly vpc?: ec2.IVpc;
 
   /**
    * Database configurations
@@ -78,11 +82,11 @@ export interface ServerlessApiProps {
 /**
  * Use `ServerlessApi` to create the serverless API resource
  */
-export class ServerlessApi extends cdk.Construct {
+export class ServerlessApi extends Construct {
   readonly handler: lambda.IFunction;
-  readonly vpc?: IVpc;
+  readonly vpc?: ec2.IVpc;
 
-  constructor(scope: cdk.Construct, id: string, props: ServerlessApiProps) {
+  constructor(scope: Construct, id: string, props: ServerlessApiProps) {
     super(scope, id);
 
     const DEFAULT_LAMBDA_ASSET_PATH = path.join(__dirname, '../composer/laravel58-bref');
@@ -103,7 +107,7 @@ export class ServerlessApi extends cdk.Construct {
         DB_READER: props.databaseConfig?.readerEndpoint ?? props.databaseConfig?.writerEndpoint ?? '',
         DB_USER: props.databaseConfig?.masterUserName ?? DEFAULT_DB_MASTER_USER,
       },
-      timeout: cdk.Duration.seconds(120),
+      timeout: Duration.seconds(120),
       vpc: props.vpc,
     });
 
@@ -116,11 +120,9 @@ export class ServerlessApi extends cdk.Construct {
     }
 
     const endpoint = new apigateway.HttpApi(this, 'apiservice', {
-      defaultIntegration: new LambdaProxyIntegration({
-        handler: this.handler,
-      }),
+      defaultIntegration: new HttpLambdaIntegration('lambdaHandler', this.handler),
     });
-    new cdk.CfnOutput(this, 'EndpointURL', { value: endpoint.url! });
+    new CfnOutput(this, 'EndpointURL', { value: endpoint.url! });
   }
 }
 
@@ -138,8 +140,8 @@ export interface ServerlessLaravelProps extends ServerlessApiProps {
 /**
  * Use `ServerlessLaravel` to create the serverless Laravel resource
  */
-export class ServerlessLaravel extends cdk.Construct {
-  constructor(scope: cdk.Construct, id: string, props: ServerlessLaravelProps) {
+export class ServerlessLaravel extends Construct {
+  constructor(scope: Construct, id: string, props: ServerlessLaravelProps) {
     super(scope, id);
     new ServerlessApi(this, id, {
       lambdaCodePath: props.laravelPath,
@@ -170,14 +172,14 @@ export interface DatabaseProps {
   /**
    * The VPC for the DatabaseCluster
    */
-  readonly vpc: IVpc;
+  readonly vpc: ec2.IVpc;
 
   /**
    * instance type of the cluster
    *
    * @default - t3.medium (or, more precisely, db.t3.medium)
    */
-  readonly instanceType?: InstanceType;
+  readonly instanceType?: ec2.InstanceType;
 
   /**
    * enable the Amazon RDS proxy
@@ -200,19 +202,19 @@ export interface DatabaseProps {
 
 }
 
-export class DatabaseCluster extends cdk.Construct {
+export class DatabaseCluster extends Construct {
   readonly rdsProxy?: rds.DatabaseProxy;
   readonly masterUser: string;
   readonly masterPassword: secretsmanager.ISecret;
 
-  constructor(scope: cdk.Construct, id: string, props: DatabaseProps) {
+  constructor(scope: Construct, id: string, props: DatabaseProps) {
     super(scope, id);
 
     this.masterUser = props.masterUserName ?? 'admin';
 
     // generate and store password for masterUser in the secrets manager
     const masterUserSecret = new secretsmanager.Secret(this, 'DbMasterSecret', {
-      secretName: `${cdk.Stack.of(this).stackName}-DbMasterSecret`,
+      secretName: `${Stack.of(this).stackName}-DbMasterSecret`,
       generateSecretString: {
         secretStringTemplate: JSON.stringify({
           username: this.masterUser,
@@ -226,10 +228,10 @@ export class DatabaseCluster extends cdk.Construct {
 
     this.masterPassword = masterUserSecret;
 
-    const dbConnectionGroup = new SecurityGroup(this, 'DB Secuirty Group', {
+    const dbConnectionGroup = new ec2.SecurityGroup(this, 'DB Secuirty Group', {
       vpc: props.vpc,
     });
-    dbConnectionGroup.connections.allowInternally(Port.tcp(3306));
+    dbConnectionGroup.connections.allowInternally(ec2.Port.tcp(3306));
 
     const dbCluster = new rds.DatabaseCluster(this, 'DBCluster', {
       engine: rds.DatabaseClusterEngine.auroraMysql({
@@ -237,7 +239,7 @@ export class DatabaseCluster extends cdk.Construct {
       }),
       instanceProps: {
         vpc: props.vpc,
-        instanceType: props.instanceType ?? new InstanceType('t3.medium'),
+        instanceType: props.instanceType ?? new ec2.InstanceType('t3.medium'),
         securityGroups: [dbConnectionGroup],
       },
       credentials: {
@@ -245,7 +247,7 @@ export class DatabaseCluster extends cdk.Construct {
         password: masterUserSecret.secretValueFromJson('password'),
       },
       instances: props.instanceCapacity,
-      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     // Workaround for bug where TargetGroupName is not set but required
@@ -274,7 +276,7 @@ export class DatabaseCluster extends cdk.Construct {
         vpc: props.vpc,
         secrets: [masterUserSecret],
         iamAuth: true,
-        dbProxyName: `${cdk.Stack.of(this).stackName}-RDSProxy`,
+        dbProxyName: `${Stack.of(this).stackName}-RDSProxy`,
         securityGroups: [dbConnectionGroup],
         role: rdsProxyRole,
       };
