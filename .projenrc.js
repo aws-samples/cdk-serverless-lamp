@@ -1,14 +1,13 @@
 const { awscdk, DevEnvironmentDockerImage, Gitpod } = require('projen');
 
-const AWS_CDK_LATEST_RELEASE = '1.73.0';
 const PROJECT_NAME = 'cdk-serverless-lamp';
 const PROJECT_DESCRIPTION = 'A JSII construct lib to build AWS Serverless LAMP with AWS CDK';
-const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
 const project = new awscdk.AwsCdkConstructLibrary({
   authorName: 'Pahud Hsieh',
   authorEmail: 'hunhsieh@amazon.com',
   name: PROJECT_NAME,
+  cdkVersion: '2.14.0',
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/aws-samples/cdk-serverless-lamp.git',
   defaultReleaseBranch: 'main',
@@ -16,9 +15,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     ignoreProjen: false,
     workflowOptions: {
       labels: ['auto-approve', 'auto-merge'],
-      secret: AUTOMATION_TOKEN,
     },
   },
+  deps: [
+    '@aws-cdk/aws-apigatewayv2-integrations-alpha',
+    '@aws-cdk/aws-apigatewayv2-alpha',
+  ],
   autoApproveOptions: {
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['pahud'],
@@ -32,18 +34,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     twitter: 'pahudnet',
     announce: false,
   },
-  cdkVersion: AWS_CDK_LATEST_RELEASE,
-  cdkDependencies: [
-    '@aws-cdk/core',
-    '@aws-cdk/aws-apigateway',
-    '@aws-cdk/aws-apigatewayv2',
-    '@aws-cdk/aws-apigatewayv2-integrations',
-    '@aws-cdk/aws-ec2',
-    '@aws-cdk/aws-iam',
-    '@aws-cdk/aws-lambda',
-    '@aws-cdk/aws-secretsmanager',
-    '@aws-cdk/aws-rds',
-  ],
   python: {
     distName: 'cdk-serverless-lamp',
     module: 'cdk_serverless_lamp',

@@ -1,7 +1,9 @@
 import * as path from 'path';
-import '@aws-cdk/assert/jest';
-import { Vpc } from '@aws-cdk/aws-ec2';
-import { App, Stack } from '@aws-cdk/core';
+import {
+  App, Stack,
+  aws_ec2 as ec2,
+} from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
 import { ServerlessApi, DatabaseCluster } from '../src';
 
 test('create the ServerlessAPI', () => {
@@ -13,44 +15,44 @@ test('create the ServerlessAPI', () => {
     lambdaCodePath: path.join(__dirname, '../codebase'),
   });
 
-  expect(stack).toHaveResource('AWS::ApiGatewayV2::Api');
-  expect(stack).toHaveResource('AWS::Lambda::Function');
+  Template.fromStack(stack).hasResource('AWS::ApiGatewayV2::Api', {});
+  Template.fromStack(stack).hasResource('AWS::Lambda::Function', {});
 });
 
 
 test('create rdsProxy if props.rdsProxy is undefined', () => {
   const mockApp = new App();
   const stack = new Stack(mockApp, 'testing-stack');
-  const vpc = new Vpc(stack, 'Vpc');
+  const vpc = new ec2.Vpc(stack, 'Vpc');
 
   new DatabaseCluster(stack, 'DBCluster', {
     vpc,
   });
-  expect(stack).toHaveResource('AWS::RDS::DBProxy');
+  Template.fromStack(stack).hasResource('AWS::RDS::DBProxy', {});
 });
 
 test('create rdsProxy if props.rdsProxy is true', () => {
   const mockApp = new App();
   const stack = new Stack(mockApp, 'testing-stack');
-  const vpc = new Vpc(stack, 'Vpc');
+  const vpc = new ec2.Vpc(stack, 'Vpc');
 
   new DatabaseCluster(stack, 'DBCluster', {
     vpc,
     rdsProxy: true,
   });
-  expect(stack).toHaveResource('AWS::RDS::DBProxy');
+  Template.fromStack(stack).hasResource('AWS::RDS::DBProxy', {});
 });
 
 test('do not create rdsProxy if props.rdsProxy is false', () => {
   const mockApp = new App();
   const stack = new Stack(mockApp, 'testing-stack');
-  const vpc = new Vpc(stack, 'Vpc');
+  const vpc = new ec2.Vpc(stack, 'Vpc');
 
   new DatabaseCluster(stack, 'DBCluster', {
     vpc,
     rdsProxy: false,
   });
-  expect(stack).not.toHaveResource('AWS::RDS::DBProxy');
+  Template.fromStack(stack).resourceCountIs('AWS::RDS::DBProxy', 0);
 });
 
 
