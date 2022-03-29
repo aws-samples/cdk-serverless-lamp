@@ -49,7 +49,7 @@
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
-    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-import-resolver-typescript": "^2.7.0",
     "eslint-plugin-import": "^2.25.4",
     "jest": "^26.6.3",
     "jest-junit": "^13",
@@ -59,18 +59,18 @@
     "jsii-pacmak": "^1.55.1",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
-    "projen": "^0.53.1",
+    "projen": "^0.53.16",
     "standard-version": "^9",
     "ts-jest": "^26.5.6",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.3"
   },
   "peerDependencies": {
     "aws-cdk-lib": "^2.14.0",
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigatewayv2-alpha": "^2.17.0-alpha.0",
-    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.17.0-alpha.0"
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.18.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.18.0-alpha.0"
   },
   "keywords": [
     "aws",
