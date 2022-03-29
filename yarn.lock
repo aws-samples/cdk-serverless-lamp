@@ -4460,9 +4460,9 @@ make-error@1.x:
   integrity sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
 
 make-fetch-happen@^10.0.3, make-fetch-happen@^10.0.6:
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/make-fetch-happen/-/make-fetch-happen-10.1.0.tgz#7232ef7002a635c04d4deac325df144f21871408"
-  integrity sha512-HeP4QlkadP/Op+hE+Une1070kcyN85FshQObku3/rmzRh4zDcKXA19d2L3AQR6UoaX3uZmhSOpTLH15b1vOFvQ==
+  version "10.1.1"
+  resolved "https://registry.yarnpkg.com/make-fetch-happen/-/make-fetch-happen-10.1.1.tgz#d93e9241e580ebe0b2b7294b2d1b79ab4e5adfa4"
+  integrity sha512-3/mCljDQNjmrP7kl0vhS5WVlV+TvSKoZaFhdiYV7MOijEnrhrjaVnqbp/EY/7S+fhUB2KpH7j8c1iRsIOs+kjw==
   dependencies:
     agentkeepalive "^4.2.1"
     cacache "^16.0.2"
