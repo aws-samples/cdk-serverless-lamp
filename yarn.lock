@@ -9,15 +9,15 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@aws-cdk/aws-apigatewayv2-alpha@^2.21.0-alpha.0":
-  version "2.21.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.21.0-alpha.0.tgz#077a691fc8065b9d42b0fd2fab350e1465fa4608"
-  integrity sha512-cxctg6uzJHmo3cUdzfyjqRxJ6vygKj1aCMwl7OAFGe13W0e4oN/tCuNLYtIiQODbzst3uep0cuVAwf2Pm4N45w==
+"@aws-cdk/aws-apigatewayv2-alpha@^2.21.1-alpha.0":
+  version "2.21.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.21.1-alpha.0.tgz#76c44c1682f9c76cc3c9c3c0284d2baded003576"
+  integrity sha512-FnPL9tLTEHI3B5N4MO6k17/GBYftT4vD5DIgX7qp3w0P4dbKpp2tc97uFNg84dg0bYN+EN8Vn81uX611ETDsNA==
 
-"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.21.0-alpha.0":
-  version "2.21.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.21.0-alpha.0.tgz#28a79497d589bc6e635120f434d093585f2fb977"
-  integrity sha512-i2+AigURdI06ZYNEgQH22d0ZriPEdn4UdJGDKPVzur844D5LbXakKxU8rSoQjB6BmEo8i/msvMEQTS1ZwXT5PQ==
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.21.1-alpha.0":
+  version "2.21.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.21.1-alpha.0.tgz#302d3d8e116b2b3666c09a3563af0ec4994e8888"
+  integrity sha512-UCTsrOhq3K9nf/8rHha0Yb9F2YAwrMB5vtOZZg8EkUiLeL0899RsjTV5ClKGcxqeCGpHfxz8zojSMA6Xx5H6ng==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.16.7":
   version "7.16.7"
@@ -5401,10 +5401,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.54.40:
-  version "0.54.40"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.54.40.tgz#e1541d4be828bfde0a2403718956d3db5c3ac3c3"
-  integrity sha512-aX4qlQXTm31u993kPOmkG6ftOUHJ2d22DZa/t56dKOCUgdQE0Q5r7vc17b2M/S+lE2ocDT8yQQxRvu/zgdVCCg==
+projen@^0.54.41:
+  version "0.54.41"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.54.41.tgz#201f6df95ad13a76c350267d2b39a82d1ae4861d"
+  integrity sha512-torOVO0ouIyD6Ge2dZys1wJOpPWAUPeOcRpxglQU960lHuaaxD8YuOR18wd9MJB+Gr6DsJOQLGFaUdi+IHVDEQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
