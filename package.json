@@ -69,8 +69,8 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigatewayv2-alpha": "^2.24.0-alpha.0",
-    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.24.0-alpha.0"
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.24.1-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.24.1-alpha.0"
   },
   "keywords": [
     "aws",

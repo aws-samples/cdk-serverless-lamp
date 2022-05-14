@@ -10,15 +10,15 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@aws-cdk/aws-apigatewayv2-alpha@^2.24.0-alpha.0":
-  version "2.24.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.24.0-alpha.0.tgz#d6058e56a01234776ee005c2ea122b226f268a2f"
-  integrity sha512-0Ajo4ENUh8RNorG66p1AfLkBAtZJkcxGsgyfz9PbvBAYl0OjpB7ALjEXS2+lrdMMJ8Ewhuhdqut7XfQYhyXtkA==
+"@aws-cdk/aws-apigatewayv2-alpha@^2.24.1-alpha.0":
+  version "2.24.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.24.1-alpha.0.tgz#95a89a204dd472d64fd0d6905bfec1db96796554"
+  integrity sha512-U7qi+mvGCJaUm8753yLs43L4PVPVaKJKU3RZ65iCj/uRB3dT2gDa7bdRQc6ptnvfZriLwDq6Au6NMbDAuNDluw==
 
-"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.24.0-alpha.0":
-  version "2.24.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.24.0-alpha.0.tgz#6b938467b4622c25181c05ae626aa6f0b667b77f"
-  integrity sha512-hDP1VQpYKmdgFXwron6weZlo4NV1qTQ6TJ5cRZl+JfOnWhsE6zcTiNog+U45ZQNLkQt7Is6JzdmB7+4Fpc0aLw==
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.24.1-alpha.0":
+  version "2.24.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.24.1-alpha.0.tgz#c8db947857c22f02762563f677ecab0f54201549"
+  integrity sha512-/Nu2DH9suome5w7306T3tzqPMoQB3fve4xzX5VpTC798F7cQUlMqcxzyZD3s55nuRXnhRZoLdAQlwLbEUxUIxA==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.16.7":
   version "7.16.7"
@@ -2736,21 +2736,21 @@ glob-parent@^6.0.1:
     is-glob "^4.0.3"
 
 glob@^7, glob@^7.0.0, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
-  integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
+  version "7.2.2"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.2.tgz#29deb38e1ef90f132d5958abe9c3ee8e87f3c318"
+  integrity sha512-NzDgHDiJwKYByLrL5lONmQFpK/2G78SMMfo+E9CuGlX4IkvfKDsiQSNPwAYxEy+e6p7ZQ3uslSLlwlJcqezBmQ==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
     inherits "2"
-    minimatch "^3.0.4"
+    minimatch "^3.1.1"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
 glob@^8.0.1:
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.2.tgz#1b87a70413e702431b17d5fb4363a70e3a6e29de"
-  integrity sha512-0jzor6jfIKaDg/2FIN+9L8oDxzHTkI/+vwJimOmOZjaVjFVVZJFojOYbbWC0okXbBVSgYpbcuQ7xy6gDP9f8gw==
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
+  integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -4295,7 +4295,7 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
-minimatch@^3.0.4, minimatch@^3.1.2:
+minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
