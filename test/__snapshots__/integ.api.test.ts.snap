@@ -276,6 +276,18 @@ Object {
       "Type": "AWS::SecretsManager::Secret",
       "UpdateReplacePolicy": "Delete",
     },
+    "DatabaseClusterDbMasterSecretAttachment4F388165": Object {
+      "Properties": Object {
+        "SecretId": Object {
+          "Ref": "DatabaseClusterDbMasterSecret98DF2329",
+        },
+        "TargetId": Object {
+          "Ref": "DatabaseClusterDBCluster27F7FF5A",
+        },
+        "TargetType": "AWS::RDS::DBCluster",
+      },
+      "Type": "AWS::SecretsManager::SecretTargetAttachment",
+    },
     "DatabaseClusterRdsProxyRole9B27D8A3": Object {
       "Properties": Object {
         "AssumeRolePolicyDocument": Object {
