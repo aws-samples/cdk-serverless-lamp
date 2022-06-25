@@ -100,6 +100,10 @@
       "type": "build"
     },
     {
+      "name": "@aws-cdk/aws-apigatewayv2-alpha",
+      "type": "peer"
+    },
+    {
       "name": "aws-cdk-lib",
       "version": "^2.29.1",
       "type": "peer"

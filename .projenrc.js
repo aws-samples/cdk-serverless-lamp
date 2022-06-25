@@ -21,6 +21,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@aws-cdk/aws-apigatewayv2-integrations-alpha',
     '@aws-cdk/aws-apigatewayv2-alpha',
   ],
+  peerDeps: [
+    '@aws-cdk/aws-apigatewayv2-alpha',
+  ],
   autoApproveOptions: {
     secret: 'GITHUB_TOKEN',
     allowedUsernames: ['pahud'],
