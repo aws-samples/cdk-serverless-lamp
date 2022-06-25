@@ -46,6 +46,7 @@ new DatabaseCluster(scope: Construct, id: string, props: DatabaseProps)
   * **masterUserName** (<code>string</code>)  master username. __*Default*__: admin
   * **rdsProxy** (<code>boolean</code>)  enable the Amazon RDS proxy. __*Default*__: true
   * **rdsProxyOptions** (<code>[aws_rds.DatabaseProxyOptions](#aws-cdk-lib-aws-rds-databaseproxyoptions)</code>)  RDS Proxy Options. __*Optional*__
+  * **vpcSubnets** (<code>[aws_ec2.SubnetSelection](#aws-cdk-lib-aws-ec2-subnetselection)</code>)  List of subnets to use when creating subnet group. __*Optional*__
 
 
 
@@ -160,6 +161,7 @@ Name | Type | Description
 **masterUserName**? | <code>string</code> | master username.<br/>__*Default*__: admin
 **rdsProxy**? | <code>boolean</code> | enable the Amazon RDS proxy.<br/>__*Default*__: true
 **rdsProxyOptions**? | <code>[aws_rds.DatabaseProxyOptions](#aws-cdk-lib-aws-rds-databaseproxyoptions)</code> | RDS Proxy Options.<br/>__*Optional*__
+**vpcSubnets**? | <code>[aws_ec2.SubnetSelection](#aws-cdk-lib-aws-ec2-subnetselection)</code> | List of subnets to use when creating subnet group.<br/>__*Optional*__
 
 
 
