@@ -228,7 +228,7 @@ export class DatabaseCluster extends Construct {
 
     this.masterPassword = masterUserSecret;
 
-    const dbConnectionGroup = new ec2.SecurityGroup(this, 'DB Secuirty Group', {
+    const dbConnectionGroup = new ec2.SecurityGroup(this, 'DB Security Group', {
       vpc: props.vpc,
     });
     dbConnectionGroup.connections.allowInternally(ec2.Port.tcp(3306));
