@@ -93,8 +93,8 @@ new ServerlessApi(scope: Construct, id: string, props: ServerlessApiProps)
 
 Name | Type | Description 
 -----|------|-------------
+**endpoint** | <code>[HttpApi](#aws-cdk-aws-apigatewayv2-alpha-httpapi)</code> | <span></span>
 **handler** | <code>[aws_lambda.IFunction](#aws-cdk-lib-aws-lambda-ifunction)</code> | <span></span>
-**endpoint**? | <code>[HttpApi](#aws-cdk-aws-apigatewayv2-alpha-httpapi)</code> | __*Optional*__
 **vpc**? | <code>[aws_ec2.IVpc](#aws-cdk-lib-aws-ec2-ivpc)</code> | __*Optional*__
 
 
@@ -133,7 +133,7 @@ new ServerlessLaravel(scope: Construct, id: string, props: ServerlessLaravelProp
 
 Name | Type | Description 
 -----|------|-------------
-**api**? | <code>[ServerlessApi](#cdk-serverless-lamp-serverlessapi)</code> | __*Optional*__
+**api** | <code>[ServerlessApi](#cdk-serverless-lamp-serverlessapi)</code> | <span></span>
 
 
 
