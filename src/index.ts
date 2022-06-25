@@ -200,6 +200,11 @@ export interface DatabaseProps {
    */
   readonly instanceCapacity?: number;
 
+  /**
+   * List of subnets to use when creating subnet group.
+   */
+  readonly vpcSubnets?: ec2.SubnetSelection;
+
 }
 
 export class DatabaseCluster extends Construct {
@@ -241,6 +246,7 @@ export class DatabaseCluster extends Construct {
         vpc: props.vpc,
         instanceType: props.instanceType ?? new ec2.InstanceType('t3.medium'),
         securityGroups: [dbConnectionGroup],
+        vpcSubnets: props.vpcSubnets,
       },
       credentials: {
         username: masterUserSecret.secretValueFromJson('username').toString(),
@@ -279,6 +285,7 @@ export class DatabaseCluster extends Construct {
         dbProxyName: `${Stack.of(this).stackName}-RDSProxy`,
         securityGroups: [dbConnectionGroup],
         role: rdsProxyRole,
+        vpcSubnets: props.vpcSubnets,
       };
 
       // create the RDS proxy
