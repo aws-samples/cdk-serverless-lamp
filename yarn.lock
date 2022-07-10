@@ -10,15 +10,15 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@aws-cdk/aws-apigatewayv2-alpha@^2.31.0-alpha.0":
-  version "2.31.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.31.0-alpha.0.tgz#fd7e5f89049d6422c479b201ade38519428f5e4e"
-  integrity sha512-lL1knyXVmbV66RhwCLtPm6skWO2dsX8qV+35WHEKGkiFRUttXtr6PVYPbEr1Q4hTrDDvTbKrVzHbGrZkVSRFyw==
+"@aws-cdk/aws-apigatewayv2-alpha@^2.31.1-alpha.0":
+  version "2.31.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.31.1-alpha.0.tgz#122a41abdea0458aa022deb5c0cabfbc09187488"
+  integrity sha512-Mybkj/nrTImf7em66geZo16dDzsRc2QOAi86YzzfX9oTPcm8t9L/3OhsEGvGvnEKg4RlD57gfltW8mIuOH7dkg==
 
-"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.31.0-alpha.0":
-  version "2.31.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.31.0-alpha.0.tgz#10299193bf89b281648729fe5abca207a244b87f"
-  integrity sha512-urLEqRFxNlofBDVmF8jmkDgEJnoZVb4hqneOFkCrgWP5avZcdZwpbp9GwSgSlWMH4YLlfEGNKgYE4DWg+MrkzQ==
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.31.1-alpha.0":
+  version "2.31.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.31.1-alpha.0.tgz#8e2720366d98bdf11be6327c6101fdb145c76e1c"
+  integrity sha512-rVsq3c1KbEOu1Use3prm1Z9vINzw1Q2pYElzlg7ieIzDWRbXviC/J3nXbYYVwq7mHa7BATlYaj9JJYoartwILg==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.18.6":
   version "7.18.6"
