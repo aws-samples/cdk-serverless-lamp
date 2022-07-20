@@ -10,15 +10,15 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@aws-cdk/aws-apigatewayv2-alpha@^2.32.1-alpha.0":
-  version "2.32.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.32.1-alpha.0.tgz#affc1a3521c2eb59b9aa1cfd3b6617bf39aef806"
-  integrity sha512-6QSQn13IpTwx48HMOMFUGe9E1ws4y5QP7l78AdJjfbM0oSmdiJAbE/c627nhY7o2AUA1LQPCeWMZuxWzMwhBgg==
+"@aws-cdk/aws-apigatewayv2-alpha@^2.33.0-alpha.0":
+  version "2.33.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.33.0-alpha.0.tgz#b9b685679c98f400d9e7ae55b8a1718f63f66f4f"
+  integrity sha512-+NHyKEPMPvAGkRhN8tmOHemuxiowalo+K7xd/MbA9yC5Cibp4TNNu9KKDVbmOLwk7XdbXlkDixwECWcOboSbOw==
 
-"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.32.1-alpha.0":
-  version "2.32.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.32.1-alpha.0.tgz#03a907792eef87490d6f9dc9010892fa4abd826a"
-  integrity sha512-8X4+eiBkcm82kvZJn66Yc7SsgpG5oVdW9t3ZPsuxUMKtwWRpKO7NbV7lqPSzc8Kw2f4wg34TTw116YikI3BFTA==
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.33.0-alpha.0":
+  version "2.33.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.33.0-alpha.0.tgz#bc8662ca3ff9accb162c5e28cbc3fe2c8319b2d4"
+  integrity sha512-ykYxT1bSlIUnJ0qX3ecwRn9AWDTFOFz58rezDpuws/chEv/J61JC33QeJLiKea9n/50g1+/Cjtwai07P1WmxlA==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.18.6":
   version "7.18.6"
@@ -2097,9 +2097,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.188:
-  version "1.4.193"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.193.tgz#8e760b9d9a7b92fe472664fd61811b307f3de39b"
-  integrity sha512-tBqbgRv0yFIYBLBQKW6kHzI81rjvO1CRy+K8+XHTZtkVPkAZayI/CxTqBiy6Q1+tYAxby8bq/6yOiuNkTvfxmw==
+  version "1.4.195"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.195.tgz#139b2d95a42a3f17df217589723a1deac71d1473"
+  integrity sha512-vefjEh0sk871xNmR5whJf9TEngX+KTKS3hOHpjoMpauKkwlGwtMz1H8IaIjAT/GNnX0TbGwAdmVoXCAzXf+PPg==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4158,9 +4158,9 @@ make-error@1.x:
   integrity sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
 
 make-fetch-happen@^10.0.3, make-fetch-happen@^10.0.6:
-  version "10.1.8"
-  resolved "https://registry.yarnpkg.com/make-fetch-happen/-/make-fetch-happen-10.1.8.tgz#3b6e93dd8d8fdb76c0d7bf32e617f37c3108435a"
-  integrity sha512-0ASJbG12Au6+N5I84W+8FhGS6iM8MyzvZady+zaQAu+6IOaESFzCLLD0AR1sAFF3Jufi8bxm586ABN6hWd3k7g==
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/make-fetch-happen/-/make-fetch-happen-10.2.0.tgz#0bde3914f2f82750b5d48c6d2294d2c74f985e5b"
+  integrity sha512-OnEfCLofQVJ5zgKwGk55GaqosqKjaR6khQlJY3dBAA+hM25Bc5CmX5rKUfVut+rYA3uidA7zb7AvcglU87rPRg==
   dependencies:
     agentkeepalive "^4.2.1"
     cacache "^16.1.0"
@@ -4920,10 +4920,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.58.35:
-  version "0.58.35"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.58.35.tgz#8fe9765a811b132b432fb986db07965b713cf062"
-  integrity sha512-1GfMIi/AQOisEFNd+II/BfepExcV/ERHreb8EBTs23t5GnPdBKzLOrD5vHasVJ+EC1uYjxIAJcqqShfrXLTNtg==
+projen@^0.59.2:
+  version "0.59.2"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.59.2.tgz#e3304b0a69f7795c4e0007c90904887febb43867"
+  integrity sha512-23zGmZfavJc3Dxiuoqy71rBIDUTL47Rvcl5Iy3DZNPrfdQ/WZP37m3c4fyyROOl/GpHchG1jKfuZiMBssHPWEA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
