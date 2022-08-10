@@ -10,15 +10,15 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@aws-cdk/aws-apigatewayv2-alpha@^2.36.0-alpha.0":
-  version "2.36.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.36.0-alpha.0.tgz#51ce64bdbe86e31546048a9207c9da096dd48819"
-  integrity sha512-gvsSXxIkR0zgwgup17u1q6z+aVS+mt1MqOu30tbpbulotCueopY3Q+aGrfc6H9G8l0xNujorpBqhhXvplLGJVg==
+"@aws-cdk/aws-apigatewayv2-alpha@^2.37.0-alpha.0":
+  version "2.37.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.37.0-alpha.0.tgz#253e7daf1325700c39fc56be8e26addcc80a595e"
+  integrity sha512-1MSEqxBtUrCl8zxkssTs5TUsGPHnCAlqvYbHj9P0kEX1VLbx7+9vcgEijw3wxpUjGNOIBMETxLuFInr4Lrpc9w==
 
-"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.36.0-alpha.0":
-  version "2.36.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.36.0-alpha.0.tgz#85f68ded4f9b8d06df323a0e1a7a637eaa578c5b"
-  integrity sha512-23iQXjgP0ErCal2NLRNMQi0tIZD2Qmri3p1jAQqRI+ChKYAb54F0bIb5qEl3t4dQOfadDdpKR0B0rz48fdsJVQ==
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.37.0-alpha.0":
+  version "2.37.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.37.0-alpha.0.tgz#eb68ac30a0503189b4c2ced373bf3d6b76ece8aa"
+  integrity sha512-NxJIPdenQzBbPit8VdzdhRfPqRxT+YbRKI95uNcBkDg8L2tpqxrD8QkIQYsoA2aL2OV1OvIxz48VIJC5ZjLfZQ==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.18.6":
   version "7.18.6"
@@ -2108,9 +2108,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.202:
-  version "1.4.212"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.212.tgz#20cd48e88288fd2428138c108804edb1961bf559"
-  integrity sha512-LjQUg1SpLj2GfyaPDVBUHdhmlDU1vDB4f0mJWSGkISoXQrn5/lH3ECPCuo2Bkvf6Y30wO+b69te+rZK/llZmjg==
+  version "1.4.213"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.213.tgz#a0d0f535e4fbddc25196c91ff2964b5660932297"
+  integrity sha512-+3DbGHGOCHTVB/Ms63bGqbyC1b8y7Fk86+7ltssB8NQrZtSCvZG6eooSl9U2Q0yw++fL2DpHKOdTU0NVEkFObg==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -2937,9 +2937,9 @@ hosted-git-info@^4.0.0, hosted-git-info@^4.0.1:
     lru-cache "^6.0.0"
 
 hosted-git-info@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-5.0.0.tgz#df7a06678b4ebd722139786303db80fdf302ea56"
-  integrity sha512-rRnjWu0Bxj+nIfUOkz0695C0H6tRrN5iYIzYejb0tDEefe2AekHu/U5Kn9pEie5vsJqpNQU02az7TGSH3qpz4Q==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-5.1.0.tgz#9786123f92ef3627f24abc3f15c20d98ec4a6594"
+  integrity sha512-Ek+QmMEqZF8XrbFdwoDjSbm7rT23pCgEMOJmz6GPk/s4yH//RQfNPArhIxbguNxROq/+5lNBwCDHMhA903Kx1Q==
   dependencies:
     lru-cache "^7.5.1"
 
@@ -4956,10 +4956,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.61.3:
-  version "0.61.3"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.61.3.tgz#5511f7fdd4a03bca8ffe60013b1ed9cc7ada83cd"
-  integrity sha512-DeW4oj8mx5PJe/MPEqhiOOd5tZTCO7Vbl+U8JL0fs+uaJJKp2RnrkjhBMNpfolQYPK7uoSLtwgp2GYue9I2fPA==
+projen@^0.61.4:
+  version "0.61.4"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.61.4.tgz#d5e869716f74dea586070594ce06140a8b49a406"
+  integrity sha512-rYkDfrWWsJhpoRXj5uSnnkmf/NeEKW+DaAmD75It11EGw49Xy4k8mmn3j/HcygXKnh/qtgQqRh07Q62jtyumxg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
