@@ -59,7 +59,7 @@
     "jsii-pacmak": "^1.66.0",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^15",
-    "projen": "^0.61.37",
+    "projen": "^0.61.41",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "^4.8.2"
@@ -69,8 +69,8 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigatewayv2-alpha": "^2.39.1-alpha.0",
-    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.39.1-alpha.0"
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.40.0-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.40.0-alpha.0"
   },
   "keywords": [
     "aws",
