@@ -242,10 +242,7 @@ export class DatabaseCluster extends Construct {
         instanceType: props.instanceType ?? new ec2.InstanceType('t3.medium'),
         securityGroups: [dbConnectionGroup],
       },
-      credentials: {
-        username: masterUserSecret.secretValueFromJson('username').toString(),
-        password: masterUserSecret.secretValueFromJson('password'),
-      },
+      credentials: rds.Credentials.fromSecret(masterUserSecret),
       instances: props.instanceCapacity,
       removalPolicy: RemovalPolicy.DESTROY,
     });

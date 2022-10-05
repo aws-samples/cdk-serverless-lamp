@@ -7,7 +7,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorName: 'Pahud Hsieh',
   authorEmail: 'hunhsieh@amazon.com',
   name: PROJECT_NAME,
-  cdkVersion: '2.18.0',
+  cdkVersion: '2.29.1',
   description: PROJECT_DESCRIPTION,
   repository: 'https://github.com/aws-samples/cdk-serverless-lamp.git',
   defaultReleaseBranch: 'main',
